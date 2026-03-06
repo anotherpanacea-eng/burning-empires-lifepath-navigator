@@ -1,0 +1,1404 @@
+[
+  {
+    "setting": "Anvil",
+    "target": "Anvil Elite",
+    "uid": 59,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Soldier",
+      "Scout",
+      "Sergeant",
+      "Anvil Elite"
+    ],
+    "expected_years": 22
+  },
+  {
+    "setting": "Anvil",
+    "target": "Medic",
+    "uid": 54,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Medic"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Anvil",
+    "target": "Scout",
+    "uid": 55,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Court Clerk",
+      "Courier",
+      "Scout"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Anvil",
+    "target": "Signals Tech",
+    "uid": 56,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Signals Tech"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Anvil",
+    "target": "Anvil Pilot",
+    "uid": 61,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Court Clerk",
+      "Courier",
+      "Anvil Pilot"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Anvil",
+    "target": "Armorer",
+    "uid": 62,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Sergeant",
+      "Stormtrooper",
+      "Armorer"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Anvil",
+    "target": "Anvil Engineer",
+    "uid": 63,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Machinist",
+      "Armorer",
+      "Anvil Engineer"
+    ],
+    "expected_years": 27
+  },
+  {
+    "setting": "Anvil",
+    "target": "Propagandist",
+    "uid": 65,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Student",
+      "Ravilar",
+      "Propagandist"
+    ],
+    "expected_years": 37
+  },
+  {
+    "setting": "Anvil",
+    "target": "X-O",
+    "uid": 66,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Court Clerk",
+      "Courier",
+      "X-O"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Anvil",
+    "target": "Anvil Captain",
+    "uid": 67,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Court Armiger",
+      "Lord-Pilot Anvil",
+      "Anvil Captain"
+    ],
+    "expected_years": 32
+  },
+  {
+    "setting": "Commune",
+    "target": "Professional Officer",
+    "uid": 112,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Courier",
+      "Sergeant",
+      "Professional Officer"
+    ],
+    "expected_years": 30
+  },
+  {
+    "setting": "Commune",
+    "target": "Philosopher",
+    "uid": 113,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Philosopher"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Commune",
+    "target": "Local Official",
+    "uid": 114,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Clerk",
+      "Local Official"
+    ],
+    "expected_years": 32
+  },
+  {
+    "setting": "Commune",
+    "target": "Instructor",
+    "uid": 115,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Instructor"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Commune",
+    "target": "Law Enforcement",
+    "uid": 116,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Mandarin",
+      "Constable",
+      "Law Enforcement"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Commune",
+    "target": "Media",
+    "uid": 117,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Media"
+    ],
+    "expected_years": 35
+  },
+  {
+    "setting": "Commune",
+    "target": "Judge",
+    "uid": 119,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Student",
+      "Mandarin",
+      "Judge"
+    ],
+    "expected_years": 41
+  },
+  {
+    "setting": "Commune",
+    "target": "Municipal Official",
+    "uid": 120,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Clerk",
+      "Lawyer",
+      "Municipal Official"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Commune",
+    "target": "Appointed Official",
+    "uid": 124,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Student",
+      "Financier",
+      "Appointed Official"
+    ],
+    "expected_years": 35
+  },
+  {
+    "setting": "Commune",
+    "target": "Diplomat",
+    "uid": 125,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Student",
+      "Financier",
+      "Diplomat"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Commune",
+    "target": "Politico",
+    "uid": 126,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Student",
+      "Financier",
+      "Politico"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Commune",
+    "target": "Cabinet Member",
+    "uid": 127,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Financier",
+      "Diplomat",
+      "Cabinet Member"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Commune",
+    "target": "Executive Official",
+    "uid": 128,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Clerk",
+      "Local Official",
+      "Legislative Official",
+      "Executive Official"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Freeman",
+    "target": "Functionary",
+    "uid": 161,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Functionary"
+    ],
+    "expected_years": 34
+  },
+  {
+    "setting": "Freeman",
+    "target": "Hosteler",
+    "uid": 165,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Smuggler",
+      "Hosteler"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Freeman",
+    "target": "Fabricator",
+    "uid": 167,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Laborer",
+      "Fabricator"
+    ],
+    "expected_years": 30
+  },
+  {
+    "setting": "Freeman",
+    "target": "Trader",
+    "uid": 170,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Smuggler",
+      "Fence",
+      "Traveler",
+      "Trader"
+    ],
+    "expected_years": 32
+  },
+  {
+    "setting": "Freeman",
+    "target": "Manufacturer",
+    "uid": 172,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Apprentice Craftsman",
+      "Craftsman",
+      "Courier",
+      "Manufacturer"
+    ],
+    "expected_years": 37
+  },
+  {
+    "setting": "Freeman",
+    "target": "Artisan",
+    "uid": 173,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Apprentice Craftsman",
+      "Craftsman",
+      "Engineer",
+      "Artisan"
+    ],
+    "expected_years": 40
+  },
+  {
+    "setting": "Hammer",
+    "target": "Hammer Captain",
+    "uid": 51,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Companion",
+      "Court Clerk",
+      "Courier",
+      "Hammer Captain"
+    ],
+    "expected_years": 32
+  },
+  {
+    "setting": "Hammer",
+    "target": "Shipfitter",
+    "uid": 36,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Shipfitter"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Hammer",
+    "target": "Sensors Tech",
+    "uid": 37,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Sensors Tech"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Hammer",
+    "target": "Signals Tech",
+    "uid": 38,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Signals Tech"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Hammer",
+    "target": "Turret Crew",
+    "uid": 39,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Turret Crew"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Hammer",
+    "target": "Fire Control Tech",
+    "uid": 40,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Fire Control Tech"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Hammer",
+    "target": "Cook",
+    "uid": 41,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Cook"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Scrivener",
+    "uid": 95,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Clerk",
+      "Scrivener"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Accountant",
+    "uid": 96,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Clerk",
+      "Accountant"
+    ],
+    "expected_years": 31
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Agent",
+    "uid": 99,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Sergeant",
+      "Stormtrooper",
+      "Agent"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Commentariat",
+    "uid": 100,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Commentariat"
+    ],
+    "expected_years": 32
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Physician",
+    "uid": 101,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Physician"
+    ],
+    "expected_years": 34
+  },
+  {
+    "setting": "Merchant League",
+    "target": "League Official",
+    "uid": 104,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Student",
+      "Anvil Engineer",
+      "League Official"
+    ],
+    "expected_years": 37
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Banker",
+    "uid": 105,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Financier",
+      "Courier",
+      "Banker"
+    ],
+    "expected_years": 37
+  },
+  {
+    "setting": "Merchant League",
+    "target": "Chief Executive",
+    "uid": 107,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Financier",
+      "Magnate",
+      "Chief Executive"
+    ],
+    "expected_years": 39
+  },
+  {
+    "setting": "Nobility",
+    "target": "Forged Lord",
+    "uid": 13,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Companion",
+      "Court Clerk",
+      "Courier",
+      "Forged Lord"
+    ],
+    "expected_years": 38
+  },
+  {
+    "setting": "Nobility",
+    "target": "Lady",
+    "uid": 8,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Companion",
+      "Court Clerk",
+      "Courier",
+      "Lady"
+    ],
+    "expected_years": 35
+  },
+  {
+    "setting": "Nobility",
+    "target": "Void Lord",
+    "uid": 12,
+    "length": 6,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Court Armiger",
+      "Lord-Pilot Anvil",
+      "Anvil Lord",
+      "Void Lord"
+    ],
+    "expected_years": 42
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Pickpocket",
+    "uid": 197,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Cripple",
+      "Pickpocket"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Beggar King",
+    "uid": 199,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Cotar",
+      "Rebel Priest",
+      "Cripple",
+      "Beggar King"
+    ],
+    "expected_years": 30
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Cultist",
+    "uid": 201,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Court Clerk",
+      "Courier",
+      "Cotar",
+      "Cultist"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Duelist",
+    "uid": 209,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Anvil Engineer",
+      "Boxer",
+      "Duelist"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Boxer",
+    "uid": 210,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Machinist",
+      "Armorer",
+      "Boxer"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Counterfeiter",
+    "uid": 215,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Smuggler",
+      "Shopkeeper",
+      "Acrobat",
+      "Counterfeiter"
+    ],
+    "expected_years": 31
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Fence",
+    "uid": 216,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Smuggler",
+      "Fence"
+    ],
+    "expected_years": 32
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Whoremonger",
+    "uid": 217,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Smuggler",
+      "Whoremonger"
+    ],
+    "expected_years": 30
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Gunsel",
+    "uid": 218,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Courier",
+      "Sergeant",
+      "Gunsel"
+    ],
+    "expected_years": 27
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Criminal",
+    "uid": 219,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Smuggler",
+      "Shopkeeper",
+      "Fence",
+      "Criminal"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Traveler",
+    "uid": 221,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Smuggler",
+      "Fence",
+      "Criminal",
+      "Traveler"
+    ],
+    "expected_years": 30
+  },
+  {
+    "setting": "Outcast and Criminal",
+    "target": "Rebel Priest",
+    "uid": 222,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Court Clerk",
+      "Courier",
+      "Cotar",
+      "Rebel Priest"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Psychologist Foundations",
+    "target": "Eremite",
+    "uid": 133,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Mule",
+      "Eremite"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Servitude and Serfdom",
+    "target": "Captive of War",
+    "uid": 184,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Cook",
+      "Sensors Tech",
+      "Captive of War"
+    ],
+    "expected_years": 25
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Ship Rigger",
+    "uid": 139,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Ship Rigger"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Cook",
+    "uid": 140,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Cook"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Sense Rigger",
+    "uid": 141,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Sense Rigger"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Sig Rigger",
+    "uid": 142,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Sig Rigger"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Gun Rigger",
+    "uid": 143,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Court Clerk",
+      "Courier",
+      "Gun Rigger"
+    ],
+    "expected_years": 25
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Pilot",
+    "uid": 144,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Yeoman",
+      "Sense Rigger",
+      "Courier",
+      "Pilot"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Doctor",
+    "uid": 146,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Doctor"
+    ],
+    "expected_years": 35
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Ship's Engineer",
+    "uid": 147,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Courier",
+      "Machinist",
+      "Ship's Engineer"
+    ],
+    "expected_years": 30
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Ship's Captain",
+    "uid": 148,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Companion",
+      "Hammer Master",
+      "First Officer",
+      "Ship's Captain"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Spacefarer",
+    "target": "Scientist",
+    "uid": 150,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Machinist",
+      "Ship's Engineer",
+      "Scientist"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Stentor",
+    "uid": 21,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Court Clerk",
+      "Courier",
+      "Stentor"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Duenna",
+    "uid": 26,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Companion",
+      "Court Clerk",
+      "Courier",
+      "Duenna"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Hostage",
+    "uid": 25,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Runner",
+      "Soldier",
+      "Student",
+      "Hostage"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Herald",
+    "uid": 18,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Court Clerk",
+      "Courier",
+      "Herald"
+    ],
+    "expected_years": 27
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Bureaucrat",
+    "uid": 19,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Bureaucrat"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Artificer",
+    "uid": 27,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Stentor",
+      "Courier",
+      "Artificer"
+    ],
+    "expected_years": 34
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Justiciar",
+    "uid": 31,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Mandarin",
+      "Constable",
+      "Justiciar"
+    ],
+    "expected_years": 36
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Chamberlain",
+    "uid": 33,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Student",
+      "Mandarin",
+      "Justiciar",
+      "Chamberlain"
+    ],
+    "expected_years": 39
+  },
+  {
+    "setting": "Stewardship and Court",
+    "target": "Lord Steward",
+    "uid": 34,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Forged Lord",
+      "Court Clerk",
+      "Courier",
+      "Lord Steward"
+    ],
+    "expected_years": 34
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Dregus",
+    "uid": 84,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Devoted to Fire",
+      "Born to Rule",
+      "Cotar",
+      "Dregus"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Archcotare",
+    "uid": 86,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Devoted to Fire",
+      "Cotar",
+      "Dregus",
+      "Archcotare"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Archivist",
+    "uid": 74,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Companion",
+      "Devoted to Fire",
+      "Student",
+      "Archivist"
+    ],
+    "expected_years": 34
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Interpreter",
+    "uid": 75,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Companion",
+      "Devoted to Fire",
+      "Student",
+      "Interpreter"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Custodian",
+    "uid": 76,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Companion",
+      "Devoted to Fire",
+      "Student",
+      "Custodian"
+    ],
+    "expected_years": 33
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Cotar Fomas",
+    "uid": 85,
+    "length": 6,
+    "expected_path": [
+      "Born to Rule",
+      "Soldier",
+      "Sergeant",
+      "Devoted to Fire",
+      "Sodalis-Captain",
+      "Cotar Fomas"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Cotar",
+    "uid": 83,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Devoted to Fire",
+      "Court Clerk",
+      "Courier",
+      "Cotar"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Cotar Antistes",
+    "uid": 90,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Runner",
+      "Soldier",
+      "Student",
+      "Cotar Antistes"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Notary",
+    "uid": 70,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Student",
+      "Student",
+      "Notary"
+    ],
+    "expected_years": 35
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Mystes",
+    "uid": 73,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Devoted to Fire",
+      "Court Clerk",
+      "Courier",
+      "Mystes"
+    ],
+    "expected_years": 27
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Bringer of Fire",
+    "uid": 77,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Devoted to Fire",
+      "Court Clerk",
+      "Courier",
+      "Bringer of Fire"
+    ],
+    "expected_years": 28
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Sodalis",
+    "uid": 78,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Devoted to Fire",
+      "Court Clerk",
+      "Courier",
+      "Sodalis"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Sodalis Technician",
+    "uid": 79,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Devoted to Fire",
+      "Court Clerk",
+      "Courier",
+      "Sodalis Technician"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Sodalis Pilot",
+    "uid": 80,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Devoted to Fire",
+      "Court Clerk",
+      "Courier",
+      "Sodalis Pilot"
+    ],
+    "expected_years": 26
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Sodalis-Brother",
+    "uid": 81,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Court C\u0153ptir",
+      "Court Armiger",
+      "Lord-Pilot Anvil",
+      "Sodalis-Brother"
+    ],
+    "expected_years": 27
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Sodalis-Captain",
+    "uid": 82,
+    "length": 5,
+    "expected_path": [
+      "Born on the Streets",
+      "Soldier",
+      "Courier",
+      "Sergeant",
+      "Sodalis-Captain"
+    ],
+    "expected_years": 29
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Adjutant Inquisitor",
+    "uid": 87,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Court Clerk",
+      "Courier",
+      "Cotar",
+      "Adjutant Inquisitor"
+    ],
+    "expected_years": 27
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Inquisitor",
+    "uid": 88,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Cotar",
+      "Adjutant Inquisitor",
+      "Courier",
+      "Inquisitor"
+    ],
+    "expected_years": 31
+  },
+  {
+    "setting": "Theocracy",
+    "target": "High Inquisitor",
+    "uid": 89,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Cotar",
+      "Adjutant Inquisitor",
+      "Inquisitor",
+      "High Inquisitor"
+    ],
+    "expected_years": 31
+  },
+  {
+    "setting": "Theocracy",
+    "target": "Cotar Arderes",
+    "uid": 91,
+    "length": 5,
+    "expected_path": [
+      "Born to Rule",
+      "Cotar Antistes",
+      "Court Clerk",
+      "Courier",
+      "Cotar Arderes"
+    ],
+    "expected_years": 37
+  }
+]
