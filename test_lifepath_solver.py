@@ -652,6 +652,67 @@ class TestKOfNRequirements:
         # (Criminal can also be reached via requires_any tag paths)
         assert len(combos_found) >= 1, "Should find at least one k-of-n combo"
 
+    def test_D11_k_of_n_warning_suppressed_when_requires_any_satisfied(self, solver):
+        """k-of-n warning should not fire when requires_any branch satisfies the OR.
+
+        Criminal's requirement is:
+          (Politico OR Mandarin OR ...) OR (2 of Smuggler, Kidnapper, ...)
+        If Politico is present, the requires_any branch is satisfied and
+        the k-of-n warning should be suppressed.
+        """
+        # Build: Born on the Streets -> Student -> Financier -> Politico -> Criminal
+        born = solver.by_name['Born on the Streets'][0]
+        student = [lp for lp in solver.by_name['Student'] if lp.setting == 'Commune'][0]
+        financier = solver.by_name['Financier'][0]
+        politico = solver.by_name['Politico'][0]
+        criminal = solver.by_name['Criminal'][0]
+
+        chain = Chain(lifepaths=[born, student, financier, politico, criminal])
+        is_valid, warnings = solver.validate_chain(chain)
+
+        assert is_valid, "Chain with Politico -> Criminal should be valid"
+        k_of_n_warnings = [w for w in warnings if 'requires' in w and 'of specified LPs' in w]
+        assert len(k_of_n_warnings) == 0, \
+            f"k-of-n warning should be suppressed when requires_any satisfied, got: {k_of_n_warnings}"
+
+    def test_D12_must_include_enforces_all_waypoints(self, solver):
+        """must_include should only return chains containing ALL specified LPs"""
+        chains = solver.find_chains('Smuggler', length=6,
+                                    must_include=['Criminal', 'Politico'], limit=10)
+
+        for chain in chains:
+            names = {lp.name for lp in chain.lifepaths}
+            assert 'Criminal' in names, f"Chain missing Criminal: {[lp.name for lp in chain.lifepaths]}"
+            assert 'Politico' in names, f"Chain missing Politico: {[lp.name for lp in chain.lifepaths]}"
+
+    def test_D13_must_include_finds_financier_politico_criminal_path(self, solver):
+        """Solver should find [Born] -> Student -> Financier -> Politico -> Criminal -> Smuggler.
+
+        This chain is valid because:
+          - Financier requires Student (satisfied)
+          - Politico requires Financier (satisfied)
+          - Criminal requires Politico via requires_any (satisfied)
+          - Smuggler requires 1 prev Outcast LP (Criminal is Outcast, satisfied)
+        """
+        chains = solver.find_chains('Smuggler', length=6,
+                                    must_include=['Politico', 'Criminal'], limit=10)
+
+        assert len(chains) > 0, "Should find chains with Politico + Criminal -> Smuggler"
+
+        # At least one chain should contain the Financier -> Politico -> Criminal sequence
+        found_fpc = False
+        for chain in chains:
+            names = [lp.name for lp in chain.lifepaths]
+            if 'Financier' in names and 'Politico' in names and 'Criminal' in names:
+                fi = names.index('Financier')
+                pi = names.index('Politico')
+                ci = names.index('Criminal')
+                if fi < pi < ci:
+                    found_fpc = True
+                    break
+
+        assert found_fpc, "Should find a chain with Financier -> Politico -> Criminal sequence"
+
 
 # ============================================================================
 # E. TRAIT PATH REQUIREMENTS (8)

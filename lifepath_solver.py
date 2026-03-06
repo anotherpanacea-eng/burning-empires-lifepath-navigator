@@ -394,6 +394,7 @@ class LifepathSolver:
 
         # Check requires_k_of_n (need k from list)
         ok_k_of_n = False
+        _k_of_n_warning = None  # Deferred: only emit if no other prereq satisfies the OR
         if reqs.get('requires_k_of_n'):
             k = reqs['requires_k_of_n']['k']
             from_uids = reqs['requires_k_of_n']['from']
@@ -409,7 +410,7 @@ class LifepathSolver:
             if matches >= k:
                 ok_k_of_n = True
             else:
-                warnings.append(f"⚠ {target.name} requires {k} of specified LPs (found {matches})")
+                _k_of_n_warning = f"⚠ {target.name} requires {k} of specified LPs (found {matches})"
 
         # Check requires_tags (any LP with matching tag)
         ok_tags = False
@@ -460,6 +461,10 @@ class LifepathSolver:
         # Combine prereq constraints (OR)
         any_prereq_satisfied = (ok_any or ok_k_of_n or ok_tags or ok_traits
                                or ok_conjunction or ok_requires_all_as_or)
+
+        # Only emit k-of-n warning if no other prereq branch satisfied the OR
+        if _k_of_n_warning and not any_prereq_satisfied:
+            warnings.append(_k_of_n_warning)
 
         # ========== FINAL DETERMINATION ==========
 
@@ -652,6 +657,13 @@ class LifepathSolver:
         # Get all non-born LPs sorted by how "connective" they are
         non_born = [lp for lp in self.lifepaths if not lp.is_born]
 
+        # Pre-resolve must_include names to LP objects for prioritization
+        must_include_lps = set()
+        if must_include:
+            for name in must_include:
+                for lp in self.by_name.get(name, []):
+                    must_include_lps.add(lp.uid)
+
         # Stack: (chain built backward from target, remaining slots)
         stack = [([target], length - 1)]
         explored = 0
@@ -732,6 +744,16 @@ class LifepathSolver:
             else:
                 # Requirements satisfied - use only fillers
                 candidates = easy_lps[:12]
+
+            # Prioritize must_include LPs not yet in the partial chain
+            # Stack is LIFO: items pushed LAST are popped FIRST.
+            # So must_include LPs go at the END of the candidates list.
+            if must_include_lps:
+                missing_uids = must_include_lps - {lp.uid for lp in partial}
+                if missing_uids:
+                    priority = [self.by_uid[uid] for uid in missing_uids
+                               if uid in self.by_uid and not self.by_uid[uid].is_born]
+                    candidates = [c for c in candidates if c.uid not in missing_uids] + priority
 
             # Add born LPs at position 0
             if remaining == 1:
@@ -1521,6 +1543,13 @@ class LifepathSolver:
                 if waypoint_lps:
                     waypoint = waypoint_lps[0]
                     self._find_via_waypoint(target, waypoint, length, valid_chains, limit * 10, born_preference, exclude_settings)
+            # Filter to chains that contain ALL must_include LPs (not just individual waypoints)
+            must_include_set = set(must_include)
+            valid_chains = [c for c in valid_chains
+                           if must_include_set <= {lp.name for lp in c.lifepaths}]
+            # Fallback: if waypoint search didn't find enough, try DFS with must_include filtering
+            if len(valid_chains) < limit:
+                self._search_backward(target, length, must_include, valid_chains, limit * 5, born_preference)
         else:
             # Check if target has complex requirements needing special handling
             reqs = target.requirements
