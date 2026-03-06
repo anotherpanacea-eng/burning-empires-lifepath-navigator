@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "Burning Empires maneuver skill requirements by Infection phase",
+    "source": "Burning Empires RPG, Infection mechanics",
+    "phases": ["Infiltration", "Usurpation", "Invasion"],
+    "maneuvers_per_phase": 8,
+    "total_slots": 24,
+    "notes": [
+      "Gambit, Inundate, Pin, and Take Action require a successful Assess first",
+      "FoRKs may only come from listed skills or GM-approved wises",
+      "Technology may not be used to aid maneuver rolls"
+    ]
+  },
+  "skill_aliases": {
+    "Law": ["Imperial Law", "Church Law", "League Law", "Commune Law"],
+    "Food Services": ["Food Service"]
+  },
+  "phases": {
+    "Infiltration": {
+      "Assess": ["Research", "Cryptography", "Accounting", "Streetwise", "Observation", "Signals", "Investigative Logic"],
+      "Conserve": ["Administration", "Ship Management", "Estate Management", "Psychology", "Physics", "Security"],
+      "Flak": ["Rhetoric", "Persuasion", "Ugly Truth", "Oratory", "Falsehood", "Doctrine", "Philosophy"],
+      "Gambit": ["Psychology", "Tactics", "Smuggling", "Food Services"],
+      "Go to Ground": ["Persuasion", "Bureaucracy", "Security Rigging"],
+      "Inundate": ["Counterfeiting", "Smuggling", "Tactics", "Manufacture", "Eugenics"],
+      "Pin": ["Command", "Administration", "Estate Management", "Ship Management", "Law", "Extortion"],
+      "Take Action": ["Rhetoric", "Suasion", "Smuggling", "Investigative Logic", "Journalism", "Counterfeiting", "Forgery"]
+    },
+    "Usurpation": {
+      "Assess": ["Security", "Signals", "Surgery", "Recon", "Accounting", "Investigative Logic", "Psychohistory", "Research"],
+      "Conserve": ["Instruction", "Tactics", "Finance", "Manufacture", "Engineering", "Eugenics", "Cryptography", "Administration"],
+      "Flak": ["Psychology", "Journalism", "Doctrine", "Extortion", "Law"],
+      "Gambit": ["Seduction", "Psychology", "Bureaucracy", "Finance", "Propaganda"],
+      "Go to Ground": ["Administration", "Estate Management", "Journalism", "Propaganda", "Streetwise"],
+      "Inundate": ["Tactics", "Propaganda", "Psychology", "Journalism", "Demonology", "Extortion"],
+      "Pin": ["Propaganda", "Finance", "Doctrine", "Bureaucracy", "Extortion", "Philosophy", "Law"],
+      "Take Action": ["Oratory", "Psychology", "Finance", "Smuggling", "Extortion", "Command", "Tactics", "Law"]
+    },
+    "Invasion": {
+      "Assess": ["Logistics", "Signals", "Finance", "Journalism"],
+      "Conserve": ["Logistics", "Manufacture", "Shipwright", "Fusion Dynamics"],
+      "Flak": ["Strategy", "Propaganda"],
+      "Gambit": ["Psychohistory", "Strategy", "Cryptography", "Logistics"],
+      "Go to Ground": ["Strategy", "Tactics", "Fortifications"],
+      "Inundate": ["Strategy"],
+      "Pin": ["Strategy", "Propaganda", "Logistics", "Tactics"],
+      "Take Action": ["Strategy", "Propaganda"]
+    }
+  }
+}

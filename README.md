@@ -9,6 +9,7 @@ Instead of building a character forward from birth, this tool lets you **start w
 Features:
 - Find all valid lifepath chains ending at your target lifepath
 - Optimize for stats, circles, resources, or youth
+- **Optimize for Infection maneuver coverage** (total or per-phase)
 - Require specific lifepaths to pass through
 - Filter by starting background (rough, noble, or common origins)
 - Require or exclude specific settings
@@ -69,9 +70,11 @@ Found 12 chain(s):
 | File | Purpose |
 |------|---------|
 | `lifepath_cli.py` | Interactive terminal interface |
-| `lifepath_solver.py` | Chain-finding engine and validation logic |
+| `lifepath_solver.py` | Chain-finding engine, validation logic, and `ManeuverData` class |
 | `human_lifepaths_complete.json` | 222 lifepaths with pre-parsed structured requirements |
-| `test_lifepath_solver.py` | 119-test suite (data integrity, requirements, search, regressions) |
+| `maneuver_skills.json` | Infection maneuver-to-skill mapping (3 phases x 8 maneuvers) |
+| `character_burning_prompt.md` | LLM system prompt for AI-assisted character burning |
+| `test_lifepath_solver.py` | 132-test suite (data integrity, requirements, search, regressions, maneuver coverage) |
 | `generate_canonical_chains.py` | Generates canonical chain templates for capstone lifepaths |
 | `canonical_test_fixtures.json` | Pre-computed test fixtures for regression testing |
 
@@ -102,11 +105,61 @@ for chain in chains:
 | `target_name` | Name of the ending lifepath |
 | `length` | Exact chain length (5-10) |
 | `must_include` | List of lifepath names that must appear in the chain |
-| `optimize` | Sort criteria: `years-`, `years+`, `stats+`, `mental+`, `physical+`, `resources+`, `circles+` |
+| `optimize` | Sort criteria: `years-`, `years+`, `stats+`, `mental+`, `physical+`, `resources+`, `circles+`, `maneuvers+`, `maneuvers-inf+`, `maneuvers-usu+`, `maneuvers-inv+` |
 | `require_settings` | Settings that must have at least one LP in the chain |
 | `exclude_settings` | Settings to exclude entirely |
 | `born_preference` | `rough`, `noble`, `common`, or `None` |
 | `limit` | Max results to return (default: 10) |
+
+## Maneuver Coverage
+
+Burning Empires Infection mechanics require specific skills for each maneuver in each phase (Infiltration, Usurpation, Invasion). The solver can optimize lifepath chains to maximize the number of maneuvers a character can participate in.
+
+```python
+from lifepath_solver import LifepathSolver
+
+solver = LifepathSolver("human_lifepaths_complete.json")
+
+# Maximize total maneuver coverage across all phases
+chains = solver.find_chains(
+    target_name="Smuggler",
+    length=6,
+    optimize=["maneuvers+"],
+    limit=5
+)
+
+# Specialize in a single phase
+chains = solver.find_chains(
+    target_name="Politico",
+    length=6,
+    optimize=["maneuvers-usu+"],  # Usurpation specialist
+    limit=5
+)
+```
+
+Coverage is reported as slots covered out of 24 total (8 per phase). A character with coverage in 18/24 slots can roll for 18 of the 24 phase-maneuver combinations.
+
+The four maneuver optimization options:
+| Option | Maximizes |
+|--------|-----------|
+| `maneuvers+` | Total coverage across all three phases |
+| `maneuvers-inf+` | Infiltration phase coverage |
+| `maneuvers-usu+` | Usurpation phase coverage |
+| `maneuvers-inv+` | Invasion phase coverage |
+
+The `ManeuverData` class can also be used standalone:
+
+```python
+from lifepath_solver import ManeuverData
+
+md = ManeuverData("maneuver_skills.json")
+coverage = md.compute_coverage({"Tactics", "Strategy", "Propaganda", "Logistics"})
+print(md.format_coverage(coverage))  # e.g. "15/24 (5/8 Inf, 5/8 Usu, 5/8 Inv)"
+```
+
+## LLM-Assisted Character Burning
+
+`character_burning_prompt.md` is a system prompt for using an LLM (e.g., Claude) as an interactive character burning assistant. It walks players through the full Burning Empires character creation process and uses the solver API to find and validate lifepath chains. Load the prompt as a system message, attach the solver and data files, and the LLM handles the rest.
 
 ## Running Tests
 
@@ -114,7 +167,7 @@ for chain in chains:
 pytest test_lifepath_solver.py -v
 ```
 
-119 tests covering data integrity, requirement satisfaction, lifepath ordering, k-of-n requirements, trait paths, complex conjunctions, position constraints, edge cases, hard negatives, search correctness, real-world integration scenarios, and canonical chain regressions.
+132 tests covering data integrity, requirement satisfaction, lifepath ordering, k-of-n requirements, trait paths, complex conjunctions, position constraints, edge cases, hard negatives, search correctness, real-world integration scenarios, canonical chain regressions, and maneuver coverage.
 
 ## Data
 

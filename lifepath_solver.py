@@ -5,6 +5,7 @@ A clean solver using pre-parsed requirements in structured JSON format.
 """
 
 import json
+import os
 from typing import List, Dict, Set, Optional, Tuple
 from dataclasses import dataclass, field
 
@@ -69,6 +70,22 @@ class Chain:
         for lp in self.lifepaths:
             tags.update(lp.tags)
         return tags
+
+    def get_skills(self) -> Set[str]:
+        """Get all named skills available from lifepaths in this chain"""
+        skills = set()
+        for lp in self.lifepaths:
+            skills.update(lp.skills.get('list', []))
+        return skills
+
+    def get_skill_points(self) -> Tuple[int, int]:
+        """Calculate total skill points and general skill points.
+
+        Returns: (total_points, general_points)
+        """
+        total = sum(lp.skills.get('points', 0) for lp in self.lifepaths)
+        general = sum(lp.skills.get('general', 0) for lp in self.lifepaths)
+        return (total, general)
 
     def get_traits(self) -> Set[str]:
         """Get all traits available in this chain"""
@@ -195,18 +212,86 @@ class Chain:
         return sum(lp.circles for lp in self.lifepaths)
 
 
+class ManeuverData:
+    """Maneuver-to-skills mapping for Burning Empires Infection phases"""
+
+    PHASES = ["Infiltration", "Usurpation", "Invasion"]
+    MANEUVERS = ["Assess", "Conserve", "Flak", "Gambit",
+                 "Go to Ground", "Inundate", "Pin", "Take Action"]
+
+    def __init__(self, json_file: str):
+        with open(json_file) as f:
+            data = json.load(f)
+        self.phases = data['phases']
+        self.aliases = data.get('skill_aliases', {})
+        self._build_expanded_skills()
+
+    def _build_expanded_skills(self):
+        """Pre-expand aliases so each maneuver has its full skill set"""
+        self.expanded = {}
+        for phase_name, maneuvers in self.phases.items():
+            self.expanded[phase_name] = {}
+            for maneuver_name, skills in maneuvers.items():
+                expanded_skills = set()
+                for skill in skills:
+                    if skill in self.aliases:
+                        expanded_skills.update(self.aliases[skill])
+                    else:
+                        expanded_skills.add(skill)
+                self.expanded[phase_name][maneuver_name] = expanded_skills
+
+    def compute_coverage(self, chain_skills: Set[str]) -> dict:
+        """Compute maneuver coverage from a set of skills.
+
+        Returns dict with:
+          total: int (out of 24)
+          by_phase: {phase: {covered: int, details: {maneuver: bool}}}
+        """
+        result = {'total': 0, 'by_phase': {}}
+
+        for phase_name in self.PHASES:
+            phase_result = {'covered': 0, 'details': {}}
+            for maneuver in self.MANEUVERS:
+                required_skills = self.expanded[phase_name][maneuver]
+                covered = bool(chain_skills & required_skills)
+                phase_result['details'][maneuver] = covered
+                if covered:
+                    phase_result['covered'] += 1
+                    result['total'] += 1
+            result['by_phase'][phase_name] = phase_result
+
+        return result
+
+    def format_coverage(self, coverage: dict) -> str:
+        """Format coverage as e.g. '18/24 (6/8 Inf, 7/8 Usu, 5/8 Inv)'"""
+        inf = coverage['by_phase']['Infiltration']['covered']
+        usu = coverage['by_phase']['Usurpation']['covered']
+        inv = coverage['by_phase']['Invasion']['covered']
+        total = coverage['total']
+        return f"{total}/24 ({inf}/8 Inf, {usu}/8 Usu, {inv}/8 Inv)"
+
+
 class LifepathSolver:
     """Solver for finding valid lifepath chains"""
 
     NOBLE_TRAITS = {"Mark of Privilege", "Your Lordship", "Your Eminence", "Your Grace", "Your Majesty"}
 
-    def __init__(self, json_file: str):
+    def __init__(self, json_file: str, maneuver_file: str = None):
         self.lifepaths: List[Lifepath] = []
         self.by_uid: Dict[int, Lifepath] = {}
         self.by_name: Dict[str, List[Lifepath]] = {}
         self.born_lifepaths: List[Lifepath] = []
 
         self._load(json_file)
+
+        # Load maneuver data (auto-detect if not specified)
+        self._maneuver_data = None
+        if maneuver_file:
+            self._maneuver_data = ManeuverData(maneuver_file)
+        else:
+            auto_path = os.path.join(os.path.dirname(os.path.abspath(json_file)), "maneuver_skills.json")
+            if os.path.exists(auto_path):
+                self._maneuver_data = ManeuverData(auto_path)
 
     def _load(self, json_file: str):
         """Load lifepaths from JSON (supports both old and consolidated formats)"""
@@ -1513,7 +1598,8 @@ class LifepathSolver:
             target_name: Name of the target lifepath
             length: Exact chain length
             must_include: LP names that must appear in chain
-            optimize: Sort criteria ('years-', 'years+', 'stats+', 'mental+', 'physical+', 'resources+', 'circles+')
+            optimize: Sort criteria ('years-', 'years+', 'stats+', 'mental+', 'physical+', 'resources+', 'circles+',
+                      'maneuvers+', 'maneuvers-inf+', 'maneuvers-usu+', 'maneuvers-inv+')
             require_settings: Settings that must have at least one LP in chain (up to 3)
             exclude_settings: Settings that cannot have any LPs in chain (up to 3)
             born_preference: 'rough' (Slave/Streets/Gun), 'noble' (Rule), 'common', or None
@@ -1628,6 +1714,22 @@ class LifepathSolver:
                     valid_chains.sort(key=lambda c: -c.total_resources)
                 elif opt == 'circles+':
                     valid_chains.sort(key=lambda c: -c.total_circles)
+                elif opt.startswith('maneuvers') and self._maneuver_data:
+                    # maneuvers+ = total coverage, maneuvers-inf+ / maneuvers-usu+ / maneuvers-inv+ = per-phase
+                    phase_key = None
+                    if 'inf' in opt:
+                        phase_key = 'Infiltration'
+                    elif 'usu' in opt:
+                        phase_key = 'Usurpation'
+                    elif 'inv' in opt:
+                        phase_key = 'Invasion'
+
+                    def _coverage_key(c, pk=phase_key):
+                        cov = self._maneuver_data.compute_coverage(c.get_skills())
+                        if pk:
+                            return -cov['by_phase'][pk]['covered']
+                        return -cov['total']
+                    valid_chains.sort(key=_coverage_key)
 
         return valid_chains[:limit]
 

@@ -9,7 +9,7 @@ import os
 import sys
 import json
 from typing import List, Optional, Tuple, Dict
-from lifepath_solver import LifepathSolver, Chain
+from lifepath_solver import LifepathSolver, Chain, ManeuverData
 
 
 def load_canonical_chains(solver=None) -> Dict:
@@ -163,7 +163,7 @@ def get_lifepath_list(prompt: str, solver, max_count: int = 3) -> List[str]:
     return validated
 
 
-def display_chain(chain: Chain, index: int, show_details: bool = True):
+def display_chain(chain: Chain, index: int, show_details: bool = True, maneuver_data=None):
     """Display a single chain result"""
     path = ' → '.join(f"{lp.name}" for lp in chain.lifepaths)
     m, p, f = chain.get_stats()
@@ -179,6 +179,14 @@ def display_chain(chain: Chain, index: int, show_details: bool = True):
               f"{Colors.CYAN}Traits:{Colors.RESET} {net_traits} net  "
               f"{Colors.CYAN}Years:{Colors.RESET} {chain.total_years}")
 
+        if maneuver_data:
+            skills = chain.get_skills()
+            coverage = maneuver_data.compute_coverage(skills)
+            _, general_pts = chain.get_skill_points()
+            coverage_str = maneuver_data.format_coverage(coverage)
+            gen_str = f"  {Colors.DIM}({general_pts} general skill pts){Colors.RESET}" if general_pts else ""
+            print(f"   {Colors.CYAN}Maneuvers:{Colors.RESET} {coverage_str}{gen_str}")
+
         if chain.warnings:
             for w in chain.warnings[:2]:
                 # Color based on warning type
@@ -188,7 +196,7 @@ def display_chain(chain: Chain, index: int, show_details: bool = True):
                     print(f"   {Colors.YELLOW}{w}{Colors.RESET}")
 
 
-def display_results(chains: List[Chain], limit: int = 10):
+def display_results(chains: List[Chain], limit: int = 10, maneuver_data=None):
     """Display search results"""
     if not chains:
         print(f"\n{Colors.RED}No valid chains found with those criteria.{Colors.RESET}")
@@ -199,7 +207,7 @@ def display_results(chains: List[Chain], limit: int = 10):
     print_divider()
 
     for i, chain in enumerate(chains[:limit], 1):
-        display_chain(chain, i)
+        display_chain(chain, i, maneuver_data=maneuver_data)
 
     if len(chains) > limit:
         print(f"\n{Colors.DIM}... and {len(chains) - limit} more{Colors.RESET}")
@@ -220,6 +228,10 @@ def run_questionnaire(solver: LifepathSolver):
         ('physical+', 'Maximum physical stats (P + Flex)'),
         ('resources+', 'Maximum resources'),
         ('circles+', 'Maximum circles'),
+        ('maneuvers+', 'Maximum Infection maneuver coverage (all phases)'),
+        ('maneuvers-inf+', 'Maximum Infiltration maneuver coverage'),
+        ('maneuvers-usu+', 'Maximum Usurpation maneuver coverage'),
+        ('maneuvers-inv+', 'Maximum Invasion maneuver coverage'),
     ]
 
     while True:
@@ -408,7 +420,7 @@ def run_questionnaire(solver: LifepathSolver):
             )
 
             # Display results
-            display_results(chains)
+            display_results(chains, maneuver_data=solver._maneuver_data)
 
             print_divider()
 

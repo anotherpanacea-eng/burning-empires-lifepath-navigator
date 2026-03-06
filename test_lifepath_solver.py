@@ -2,11 +2,11 @@
 """
 Test suite for Burning Empires Lifepath Solver (UID-based)
 
-119 tests organized into sections:
+Tests organized into sections:
 A. Data Integrity (10)
 B. Requirement Satisfaction (15)
 C. Lifepath Ordering (8)
-D. K-of-N Requirements (10)
+D. K-of-N Requirements (13)
 E. Trait Path Requirements (8)
 F. Complex Conjunctions (8)
 G. Position Constraints (8)
@@ -15,6 +15,7 @@ I. Requirement Semantics - Hard Negatives (17)
 J. Search Correctness and Ranking (15)
 K. Integration Tests - Real-World Scenarios (6)
 L. Canonical Chain Regression Tests (6)
+M. Maneuver Coverage (10)
 
 Improvements from ChatGPT review:
 - Added pick_lp() helper for robust LP selection
@@ -29,7 +30,7 @@ import pytest
 import json
 import os
 import random
-from lifepath_solver import LifepathSolver, Chain, Lifepath
+from lifepath_solver import LifepathSolver, Chain, Lifepath, ManeuverData
 
 
 # ============================================================================
@@ -1707,3 +1708,95 @@ class TestCanonicalChainRegression:
         # We generated 100 canonical chains
         assert len(canonical_fixtures) >= 90, f"Only {len(canonical_fixtures)} fixtures"
         assert len(canonical_fixtures) <= 150, f"Too many fixtures: {len(canonical_fixtures)}"
+
+
+# ============================================================================
+# M. MANEUVER COVERAGE (10)
+# ============================================================================
+
+class TestManeuverCoverage:
+    """Tests for maneuver-to-skills coverage computation"""
+
+    @pytest.fixture(scope="class")
+    def maneuver_data(self):
+        path = os.path.join(os.path.dirname(__file__), "maneuver_skills.json")
+        return ManeuverData(path)
+
+    def test_M01_maneuver_data_loads(self, maneuver_data):
+        """Maneuver data loads with 3 phases and 8 maneuvers each"""
+        assert len(maneuver_data.phases) == 3
+        for phase in ManeuverData.PHASES:
+            assert phase in maneuver_data.phases
+            assert len(maneuver_data.phases[phase]) == 8
+
+    def test_M02_law_alias_expands(self, maneuver_data):
+        """'Law' expands to Imperial/Church/League/Commune Law"""
+        pin_skills = maneuver_data.expanded['Infiltration']['Pin']
+        assert 'Imperial Law' in pin_skills
+        assert 'Church Law' in pin_skills
+        assert 'League Law' in pin_skills
+        assert 'Commune Law' in pin_skills
+        assert 'Law' not in pin_skills  # Raw alias replaced
+
+    def test_M03_food_services_alias(self, maneuver_data):
+        """'Food Services' normalizes to 'Food Service'"""
+        gambit_skills = maneuver_data.expanded['Infiltration']['Gambit']
+        assert 'Food Service' in gambit_skills
+        assert 'Food Services' not in gambit_skills
+
+    def test_M04_empty_skills_zero_coverage(self, maneuver_data):
+        """No skills = 0 coverage"""
+        coverage = maneuver_data.compute_coverage(set())
+        assert coverage['total'] == 0
+        for phase in ManeuverData.PHASES:
+            assert coverage['by_phase'][phase]['covered'] == 0
+
+    def test_M05_strategy_covers_most_invasion(self, maneuver_data):
+        """Strategy alone covers most Invasion maneuvers"""
+        coverage = maneuver_data.compute_coverage({'Strategy'})
+        inv = coverage['by_phase']['Invasion']['covered']
+        # Strategy appears in Flak, Gambit, Go to Ground, Inundate, Pin, Take Action (6 of 8)
+        assert inv >= 5, f"Strategy should cover at least 5 Invasion maneuvers, got {inv}"
+
+    def test_M06_chain_get_skills(self, solver):
+        """Chain.get_skills() returns union of all LP skill lists"""
+        chains = solver.find_chains("Criminal", length=6, limit=1)
+        assert len(chains) > 0
+        skills = chains[0].get_skills()
+        assert isinstance(skills, set)
+        assert len(skills) > 0
+        # Criminal's skills should be in there
+        assert 'Intimidation' in skills or 'Persuasion' in skills
+
+    def test_M07_chain_get_skill_points(self, solver):
+        """Chain.get_skill_points() returns (total, general) tuple"""
+        chains = solver.find_chains("Criminal", length=6, limit=1)
+        total, general = chains[0].get_skill_points()
+        assert total > 0
+        assert general >= 0
+        assert total >= general
+
+    def test_M08_maneuvers_plus_optimization(self, solver):
+        """maneuvers+ optimization sorts by coverage descending"""
+        chains = solver.find_chains("Criminal", length=6, optimize=['maneuvers+'], limit=5)
+        if len(chains) >= 2 and solver._maneuver_data:
+            coverages = [solver._maneuver_data.compute_coverage(c.get_skills())['total']
+                        for c in chains]
+            # Should be sorted descending (first >= last)
+            assert coverages[0] >= coverages[-1]
+
+    def test_M09_coverage_format_string(self, maneuver_data):
+        """format_coverage produces expected format"""
+        coverage = maneuver_data.compute_coverage({'Strategy', 'Propaganda', 'Tactics', 'Psychology'})
+        formatted = maneuver_data.format_coverage(coverage)
+        assert '/24' in formatted
+        assert 'Inf' in formatted
+        assert 'Usu' in formatted
+        assert 'Inv' in formatted
+
+    def test_M10_eugenics_not_in_human_lps(self, solver):
+        """Eugenics is not available from any human lifepath (general-only skill)"""
+        all_skills = set()
+        for lp in solver.lifepaths:
+            all_skills.update(lp.skills.get('list', []))
+        assert 'Eugenics' not in all_skills
