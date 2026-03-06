@@ -744,19 +744,29 @@ class LifepathSolver:
 
         # Pre-resolve must_include names to LP objects for prioritization
         must_include_lps = set()
+        # Count how many times each name is required (supports duplicates like ['Criminal', 'Criminal'])
+        from collections import Counter
+        must_include_counts = Counter(must_include) if must_include else Counter()
+        # Track which UIDs need repeating (name appears 2+ times in must_include)
+        must_include_repeat_uids = set()
         if must_include:
             for name in must_include:
                 for lp in self.by_name.get(name, []):
                     must_include_lps.add(lp.uid)
+                    if must_include_counts[name] > 1:
+                        must_include_repeat_uids.add(lp.uid)
 
         # Stack: (chain built backward from target, remaining slots)
         stack = [([target], length - 1)]
         explored = 0
         seen_chains = set()  # Avoid duplicate chains
 
-        # Scale search limit with chain length (longer chains need more exploration)
+        # Scale search limit with chain length and must_include complexity
         base_limit = 100000
         search_limit = base_limit * (1 + (length - 5) * 0.5) if length > 5 else base_limit
+        # Multi-setting paths need more room when must_include crosses settings
+        if must_include and len(must_include) >= 2:
+            search_limit = int(search_limit * 2)
 
         while stack and len(results) < max_results:
             partial, remaining = stack.pop()
@@ -784,8 +794,9 @@ class LifepathSolver:
 
                 if is_valid:
                     if must_include:
-                        chain_names = {lp.name for lp in chain_lps}
-                        if not all(name in chain_names for name in must_include):
+                        chain_name_counts = Counter(lp.name for lp in chain_lps)
+                        if not all(chain_name_counts[name] >= count
+                                   for name, count in must_include_counts.items()):
                             continue
 
                     chain.warnings = warnings
@@ -861,8 +872,8 @@ class LifepathSolver:
                     new_partial = partial + [born]
                     stack.append((new_partial, 0))
 
-            # Identify UIDs that can be repeated (from requires_twice)
-            repeatable_uids = set()
+            # Identify UIDs that can be repeated (from requires_twice or must_include duplicates)
+            repeatable_uids = set(must_include_repeat_uids)
             for lp_in_chain in partial:
                 rt = lp_in_chain.requirements.get('requires_twice')
                 if rt:
@@ -1406,6 +1417,206 @@ class LifepathSolver:
     NOBLE_BORN = {'Born to Rule'}
     COMMON_BORN = {'Born Citizen', 'Born to Freeman', 'Born to the League', 'Born to Fire'}
 
+    def _search_multi_waypoint(
+        self,
+        target: Lifepath,
+        length: int,
+        must_include: List[str],
+        results: List[Chain],
+        max_results: int = 50,
+        born_preference: str = None
+    ):
+        """Find chains containing multiple must_include LPs by trying all orderings.
+
+        Places must_include LPs at every valid position combination in the chain,
+        then fills remaining slots with candidate LPs and validates.
+        """
+        from itertools import permutations, combinations
+        from collections import Counter
+
+        mi_counts = Counter(must_include)
+        # The target is already placed at the end, so reduce its count in must_include
+        if target.name in mi_counts:
+            mi_counts[target.name] -= 1
+            if mi_counts[target.name] <= 0:
+                del mi_counts[target.name]
+        seen_chains = {tuple(lp.uid for lp in c.lifepaths) for c in results}
+
+        # Resolve must_include names to LP objects (with duplicates)
+        mi_lps_by_name = {}
+        for name in mi_counts:
+            mi_lps_by_name[name] = self.by_name.get(name, [])
+
+        # Build list of LP objects respecting counts
+        def get_mi_lp_lists():
+            """Generate lists of must_include LP objects respecting duplicate counts"""
+            groups = []
+            for name, count in mi_counts.items():
+                lps = mi_lps_by_name.get(name, [])
+                if not lps:
+                    return []
+                groups.append((lps, count))
+            # For each group, pick `count` LPs (usually just the same LP repeated)
+            result_lists = [[]]
+            for lps, count in groups:
+                new_lists = []
+                for existing in result_lists:
+                    for lp in lps[:3]:  # Limit variants
+                        new_lists.append(existing + [lp] * count)
+                result_lists = new_lists
+            return result_lists
+
+        mi_lp_lists = get_mi_lp_lists()
+        if not mi_lp_lists:
+            return
+
+        # Born LP ordering
+        born_order = list(self.born_lifepaths)
+        if born_preference:
+            preferred = {'rough': self.ROUGH_BORN, 'noble': self.NOBLE_BORN,
+                         'common': self.COMMON_BORN}.get(born_preference, set())
+            born_order = sorted(born_order, key=lambda b: b.name not in preferred)
+
+        # Filler pool: LPs with no complex prereqs
+        easy_fillers = [lp for lp in self.lifepaths
+                        if not lp.is_born
+                        and not lp.requirements.get('requires_any')
+                        and not lp.requirements.get('requires_all')
+                        and not lp.requirements.get('requires_k_of_n')]
+
+        # Build a rich filler pool:
+        # 1. Easy fillers (no prereqs)
+        # 2. LPs that are required BY the target or must_include LPs (satisfy their prereqs)
+        # 3. LPs whose own prereqs include must_include or target (they connect naturally)
+        mi_uids = set()
+        for lps in mi_lp_lists[:1]:
+            for lp in lps:
+                mi_uids.add(lp.uid)
+        target_uid = target.uid
+
+        # Collect UIDs referenced in requires_any of target and must_include LPs
+        satisfier_uids = set()
+        for uid_to_check in [target_uid] + list(mi_uids):
+            lp = self.by_uid.get(uid_to_check)
+            if lp:
+                satisfier_uids.update(lp.requirements.get('requires_any', []))
+        # Also collect LPs that satisfy Financier-type intermediaries
+        # (i.e., LPs referenced by satisfiers' requires_any — one level deeper)
+        deeper_uids = set()
+        for uid in satisfier_uids:
+            lp = self.by_uid.get(uid)
+            if lp:
+                deeper_uids.update(lp.requirements.get('requires_any', []))
+        satisfier_uids.update(deeper_uids)
+
+        prereq_fillers = [self.by_uid[uid] for uid in satisfier_uids
+                          if uid in self.by_uid and not self.by_uid[uid].is_born
+                          and uid not in mi_uids and uid != target_uid]
+
+        # Also include LPs whose own prereqs reference must_include/target
+        connecting_fillers = []
+        for lp in self.lifepaths:
+            if lp.is_born or lp.uid in mi_uids or lp.uid == target_uid:
+                continue
+            req_any = lp.requirements.get('requires_any', [])
+            if req_any and any(uid in mi_uids or uid == target_uid for uid in req_any):
+                connecting_fillers.append(lp)
+
+        all_fillers_dict = {lp.uid: lp for lp in easy_fillers + prereq_fillers + connecting_fillers}
+        # Sort fillers: prioritize LPs that satisfy target/must_include requirements
+        # These are the most likely to form valid chains
+        priority_uids = satisfier_uids | deeper_uids
+        all_fillers = sorted(all_fillers_dict.values(),
+                             key=lambda lp: (0 if lp.uid in priority_uids else 1, lp.uid))
+
+        for mi_lps in mi_lp_lists[:5]:
+            # Try all orderings of the must_include LPs
+            for perm in set(permutations(range(len(mi_lps)))):
+                ordered_mi = [mi_lps[i] for i in perm]
+
+                # Positions: 0=born, 1..length-2=middle, length-1=target
+                # must_include LPs go in middle positions
+                middle_slots = length - 2  # exclude born and target
+                n_mi = len(ordered_mi)
+
+                if n_mi > middle_slots:
+                    continue
+
+                # Try placing must_include LPs at different positions in middle
+                middle_positions = list(range(1, length - 1))
+                for mi_positions in combinations(middle_positions, n_mi):
+                    filler_positions = [p for p in middle_positions if p not in mi_positions]
+                    n_fillers = len(filler_positions)
+
+                    # Build partial template
+                    template = [None] * length
+                    template[length - 1] = target
+                    for i, pos in enumerate(mi_positions):
+                        template[pos] = ordered_mi[i]
+
+                    # Try born LPs (prefer specified preference)
+                    for born in born_order[:5]:
+                        template[0] = born
+
+                        if n_fillers == 0:
+                            # No fillers needed - validate directly
+                            chain_key = tuple(lp.uid for lp in template)
+                            if chain_key in seen_chains:
+                                continue
+                            seen_chains.add(chain_key)
+                            chain = Chain(lifepaths=template)
+                            is_valid, warnings = self.validate_chain(chain)
+                            if is_valid:
+                                chain.warnings = warnings
+                                results.append(chain)
+                                if len(results) >= max_results:
+                                    return
+                        elif n_fillers == 1:
+                            for filler in all_fillers[:60]:
+                                template[filler_positions[0]] = filler
+                                chain_key = tuple(lp.uid for lp in template)
+                                if chain_key in seen_chains:
+                                    continue
+                                seen_chains.add(chain_key)
+                                chain = Chain(lifepaths=list(template))
+                                is_valid, warnings = self.validate_chain(chain)
+                                if is_valid:
+                                    chain.warnings = warnings
+                                    results.append(chain)
+                                    if len(results) >= max_results:
+                                        return
+                        elif n_fillers == 2:
+                            for f1 in all_fillers[:50]:
+                                for f2 in all_fillers[:50]:
+                                    template[filler_positions[0]] = f1
+                                    template[filler_positions[1]] = f2
+                                    chain_key = tuple(lp.uid for lp in template)
+                                    if chain_key in seen_chains:
+                                        continue
+                                    seen_chains.add(chain_key)
+                                    chain = Chain(lifepaths=list(template))
+                                    is_valid, warnings = self.validate_chain(chain)
+                                    if is_valid:
+                                        chain.warnings = warnings
+                                        results.append(chain)
+                                        if len(results) >= max_results:
+                                            return
+                        elif n_fillers == 3:
+                            for f1 in all_fillers[:25]:
+                                for f2 in all_fillers[:25]:
+                                    for f3 in all_fillers[:25]:
+                                        chain_key = tuple(lp.uid for lp in template)
+                                        if chain_key in seen_chains:
+                                            continue
+                                        seen_chains.add(chain_key)
+                                        chain = Chain(lifepaths=list(template))
+                                        is_valid, warnings = self.validate_chain(chain)
+                                        if is_valid:
+                                            chain.warnings = warnings
+                                            results.append(chain)
+                                            if len(results) >= max_results:
+                                                return
+
     def _find_via_waypoint(
         self,
         target: Lifepath,
@@ -1624,16 +1835,21 @@ class LifepathSolver:
 
         # If must_include is specified, use waypoint search for each required LP
         if must_include:
+            from collections import Counter
             for waypoint_name in must_include:
                 waypoint_lps = self.by_name.get(waypoint_name, [])
                 if waypoint_lps:
                     waypoint = waypoint_lps[0]
                     self._find_via_waypoint(target, waypoint, length, valid_chains, limit * 10, born_preference, exclude_settings)
-            # Filter to chains that contain ALL must_include LPs (not just individual waypoints)
-            must_include_set = set(must_include)
+            # Filter to chains that contain ALL must_include LPs with correct counts
+            mi_counts = Counter(must_include)
             valid_chains = [c for c in valid_chains
-                           if must_include_set <= {lp.name for lp in c.lifepaths}]
-            # Fallback: if waypoint search didn't find enough, try DFS with must_include filtering
+                           if all(Counter(lp.name for lp in c.lifepaths)[name] >= count
+                                  for name, count in mi_counts.items())]
+            # Fallback 1: template-based multi-waypoint search
+            if len(valid_chains) < limit:
+                self._search_multi_waypoint(target, length, must_include, valid_chains, limit * 5, born_preference)
+            # Fallback 2: DFS with must_include filtering
             if len(valid_chains) < limit:
                 self._search_backward(target, length, must_include, valid_chains, limit * 5, born_preference)
         else:
