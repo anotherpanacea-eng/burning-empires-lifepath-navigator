@@ -1,0 +1,1602 @@
+{
+  "+1D to Conspicuous and Seduction, Grease Monkey": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Add +1D to any help or FoRK die from this character\u2019s Conspicuous skill. adds +1 Ob to Persuasion tests made against the character, and grants a +1D advantage die to any character who uses Propaganda or Journalism to feature this character. However, this trait may only be used in one single phase of the Infection. After that, it\u2019s sunglasses, head scarves and a quiet life. Vaylen only. Garlic Breath",
+    "restrictions": "Human or Human-bodied"
+  },
+  "Aadau Clan": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "Naiven who trace their ancestry back to the Aadau (pronounced: ahdow) line have a reputation of being workman like and stolid, but of good breeding. They are traditionally Shudren caste. Aadau grants a 2D reputation among the Vaylen as member of the Aadau clan. Abandoned Abused Accustomed Unlike call-ons, die traits can be to the Dark used whenever appropriate in the game. They are limited only by the conditions listed in their description (if any).",
+    "restrictions": "Aadau Naiven LP only."
+  },
+  "Abandoned": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Abused": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Addicted": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character is addicted to some k ind of chemic al subst ance\u2014 medicine, recreational drugs, paint fumes or vehicular exhaust\u2014anything that gets him high. Going without the addictive substance for more than a few hours causes the character to get edgy and jittery. The character may go one scene without getting high. If he doesn\u2019t get high in the next scene, he suffers a +1 Ob penalty to all actions until he gets his fix. Addled"
+  },
+  "Addled": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Adumbrate Veil": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Affinity for\u2026": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "An Affinity grants the character +1D to one ability applicable to the trait description. The ability must be decided before play begins. Examples include: Affinity for Business (+1D Resources for business), Affinity for Locks (+1D Security Rigging), Affinity for Technology (+1D to"
+  },
+  "Aggressive": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Agitated": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Alert": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Reduce hesitation by one when you\u2019re manning the guns. Aloof Ambitious Aeumifesh"
+  },
+  "Aloof": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Ambitious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Amorous": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Anarchist": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Animal Life": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Annelida Clan": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "The Annelida are a respectable but minor lineage in Vaylen history. They are the most numerous but least powerful and respected great lineage. They are just a step above the Amedhyen by virtue of some lost ancestor\u2019s great deed. This trait grants a 1D reputation among the Vaylen as Annelida clan.",
+    "restrictions": "Vaylen characters only."
+  },
+  "Anvil Lord": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "This trait makes the character a Peer of the Anvil. He has the right and obligation to raise a planetary-based fighting force\u2014both ground and atmospheric troops. A character with this trait may buy an affiliation with the anvil itself to represent his armed forces. A 1D affiliation represents a small or poorly kept force comprised mostly of conscripts and landwehr with exponent 3 abilities. A 2D affiliation represents a competent or sizeable force of anvil trained soldiers and a smattering of Iron with exponent 4 abilities. A 3D affiliation represents a well-trained or elite force comprised of anvil trained, anvil elite and iron trained forces with exponent 5 abilities. A character with this trait is assumed to have minor functionaries appropriate to his rank available to him at all times\u2014the first five lifepaths in the Anvil setting. No Circles test is required to bring these characters into play at the relevant exponent. If a specialist is required, test Circles, but do not use the Skill Exponent modifier. He comes with his specialist skill at the exponent of the Anvil Lord\u2019s forces. If a higher exponent is desired, you may add the obstacle modifier. trait, the character must be Born to Rule or have the Magnate lifepath.",
+    "restrictions": "If not gained as an LP"
+  },
+  "Anvil Trained": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Anvil Trained soldiers have been trained to wear heavy body armor k now n colloquially as \u201canv il\u201d because it is the most prominent uniform of the Anvil Lord\u2019s troops. The Anvil Trained trait indicates the character has been drilled in heavy infantry combat and EVA combat. This trait negates the Cumbersome disadvantage for anvil armor. Mukhadish. Appreciative of Good Craft",
+    "restrictions": "May not be taken by"
+  },
+  "Arbiter": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Arrogant": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Artisan": {
+    "type": "Char",
+    "cost": 1
+  },
+  "As an avowed member of the cult, the": {
+    "type": "Char",
+    "cost": 1,
+    "description": "this character gains a +1D affiliation Despondent with a cult of his choice. Destined for Slavery"
+  },
+  "Aura of Innocence": {
+    "type": "C-O",
+    "cost": 4,
+    "description": "The Aura of Innocence counts as a call-on for Falsehood when lying to get out of trouble or for Inconspicuous when leaving the scene of a crime."
+  },
+  "Aura of Malevolence": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Austere": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Automator": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "This character gains a persona point whenever he automates a process that previously required physical labor. This can be accomplished in building scenes or via the Infection mechanics. B Bad Egg of danger. Failure to inflict egregious harm results in the immediate loss of this trait."
+  },
+  "Beaten": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Bitter": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Bookworm": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Booming Voice": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Conspicuous."
+  },
+  "Boor": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character is a boor. Whenever he tries to make a joke or an overtly kind comment, it always comes off wrong. +1 Ob to Persuasion and Soothing Platitudes. Bored"
+  },
+  "Bored": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Born on the Wheel": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Brave": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Reduce hesitation by one when doing something brave, stupid or suicidal."
+  },
+  "Breeder": {
+    "type": "Dt",
+    "cost": 1,
+    "description": "This counts as a Yes answer for the \u201cgiven birth?\u201d question for Steel, and earns an additional +1D to Steel over that point."
+  },
+  "Bright Mark": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "Because psychology was so greatly feared during the Federation Era, DNA markings were placed in most citizens. Each time the Psychologist uses his innate powers, this mark glows brightly in a long line from forehead to cheek over the left eye. Eventually, as the Psychologist uses his abilities more and more, the mark scars and can be seen even when psychology is not in use. It is a mark of pride in the courts of the Karsan League, but reviled nearly everywhere else. 1D reputation in the Karsan League, 1D infamous reputation elsewhere. Most important, this trait grants the character access to the Psychologist\u2019s Powers section of this book. It also adds +1 Ob to Inconspicuous tests. can\u2019t be knocked out by reducing Will and Perception to zero dice, only Speed, Agility, Power or Forte. Bulldog Bungler Bruised Eyes Brutal",
+    "restrictions": "Humans only."
+  },
+  "Broken": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Brutal": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Brute": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Bungler": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Burned": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "Burned out, this character is beyond caring. Reduce hesitation by one, and increase all Persuasion and Seduction obstacles for and against this character by +1 Ob. Trait List B, C C Calculating"
+  },
+  "Call-on for Bargaining.": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "G, H Call-on for Steel when \u201con the job\u201d (committing a crime) and when avenging a friend\u2019s death or punishing a friend for betraying a mutual Belief. Hopelessly Corrupt"
+  },
+  "Callous": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Calm Demeanor": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Casually Violent": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "This character has learned some bad habits in his life. Violence toward his friends and colleagues is his way of asserting his affection and his role in their lives. Players who can horrify their group by pushing their behavior just a bit too far are rewarded with an extra fate point."
+  },
+  "Casuist": {
+    "type": "C-O",
+    "cost": 4,
+    "description": "Call-on for Rhetoric, Falsehood or Persuasion when using specious or subtle arguments to rationalize or mislead."
+  },
+  "Cautious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Chameleon": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Inconspicuous when trying to blend into a foreign society."
+  },
+  "Charming": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Falsehood or Seduction. Pick one."
+  },
+  "Child": {
+    "type": "Dt",
+    "cost": 7,
+    "description": "One of the truly bizarre aspects of Vaylen life is that they may, if they are wealthy and powerful enough, choose to inhabit the mind of a child host and see the world through its eyes. It can best be described as an adventurous vacation for Vaylen potentates. You must have the Child trait to start the game in a child body. Vibhuuten or Meshhen characters with this trait may take an extra child body if they can afford it. Stat pools for the child body: 6 M, 11 P. (Maximums: P 7, W 7, A 5, S 5, P 5, F 5.) character who has Human Caste LPs or whose last lifepath is Slave Labor, Cultist or Sleeper may choose to begin the game with a child body for one trait point. Chimerical Chronic Depression",
+    "restrictions": "Vaylen only. Any Vaylen"
+  },
+  "Citizen of the Commune": {
+    "type": "Char",
+    "cost": 1
+  },
+  "City Official": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Call-on for Steel tests when at the van of an attack and charging across the field of battle (using the Advance maneuver). This trait grants a 1D affiliation with the municipal official\u2019s home city if, and only if, the player names the city and the office in which his character serves. Charismatic Clan Leader",
+    "restrictions": "Municipal Official LP only."
+  },
+  "Claustrophobic": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character has a fear of enclosed spaces. He must pass a Steel test when forced to enter such confinement or else hesitate. Clean Cut Clever"
+  },
+  "Clever Bastard": {
+    "type": "Dt",
+    "cost": 3
+  },
+  "Cold": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Commanding Aura": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Compassionate": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Complacent": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Compliant": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Confident": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Conservative": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Contender": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "If the player purchases a rival sibling relationship for his character at full price, his character is a legitimate contender for the throne. If the Rebel Line faction is present on the planet, his character must be a figure of note\u2014at its head. The character gains a 1D affiliation with the Rebel Line."
+  },
+  "Contrite": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Cool-Headed": {
+    "type": "Dt",
+    "cost": 3
+  },
+  "Corrupt": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Cosmopolitan": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Cotar Fomas": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Crooked Fingers": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Cruel": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Cryptic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Cunning": {
+    "type": "Char",
+    "cost": 1,
+    "description": "become a slave. The trait grants a"
+  },
+  "Curious": {
+    "type": "Char",
+    "cost": 1,
+    "description": "1D affiliation with other bearers of the Destined for Slavery trait. Also,"
+  },
+  "Curt": {
+    "type": "Char",
+    "cost": 1,
+    "description": "if the player deliberately moves his character into a position where he"
+  },
+  "Cynical": {
+    "type": "Char",
+    "cost": 1,
+    "description": "could or actually does become a"
+  },
+  "Dangerous": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Daring": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Debauched": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Deceitful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Decisive": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Deferent": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Deformed": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Deluded": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Democrat": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Desperate": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Despondent": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Determined": {
+    "type": "C-O",
+    "cost": 4,
+    "description": "The Determined trait allows the character to reroll any one skill/stat/ attribute test associated with one of his Beliefs. He may only do this once per phase."
+  },
+  "Devoted to Fire": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Being Devoted to Fire is the first step on the path to enlightenment within the Church. This trait grants a 1D affiliation with other Devotees to Fire. Diplomatic",
+    "restrictions": "Devoted to Fire LP only."
+  },
+  "Different Code": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Diplomatic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Dirty": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Disciplined": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "Discipline is a way of life. It creates focus, drive and purpose. The player may add an additional\u2014fourth\u2014 Belief to his character regarding his discipline. Dismissive Dispassionate"
+  },
+  "Distant": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Distortion Monkey": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Distortion Sickness": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Too many jumps have made this character sensitive to the effects of distortion. He suffers a +2 Ob to any Forte tests regarding entering or leaving distortion. Distrustful Disturbing"
+  },
+  "Distracted": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Dog-Faced": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Domineering Presence": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Down to Earth": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Dregutai": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Driven": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Drunk": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character has a serious problem with alcohol and seeks solace in the bottle. Whenever stress or trouble arises, he turns to drink to dull his mind. He is at a +1 Ob to all actions while drunk. The player may increase that penalty at his discretion. Also, the player earns a persona point if his character fails an important test and, in a drunken rage, engages his compatriots in a Duel of Wits to convince them that it was their fault\u2014they drove him to drink, they made him what he is. E"
+  },
+  "Dutiful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Ear for Voices": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "The character always remembers a voice and is able to pick out conversations over distance and noise. An Ob 3 Perception test allows the character to hear perfectly that conversation across the busy bar."
+  },
+  "Earnest": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Edgy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Educated": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Reduce the aptitude for learning academic, research-based or historical-type skills by one.",
+    "restrictions": "Human and Vaylen only."
+  },
+  "Eerily Confident": {
+    "type": "C-O",
+    "cost": 3,
+    "description": "Possessed of an eerie confidence, this character may reroll a failed Steel test so long as the test is tied into one of his Beliefs. Effeminate"
+  },
+  "Efficient": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Eidetic Memory": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Emotional": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Entangled": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Erudite": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Exhausted": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Overworked and underfed, this character is exhausted. +1 Ob to all Forte tests."
+  },
+  "Eye for Detail": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "This is a call-on for any skill requiring a painstaking replication of detail: Counterfeiting, Forgery, Craft, etc. Choose before play begins, please."
+  },
+  "Eye for Place": {
+    "type": "C-O",
+    "cost": 3,
+    "description": "This character never forgets a place. Even if shown a fragment of an image of a locale, he can piece together the details and figure out where it is. This traits acts as a call-on for Recon and Cartography. F"
+  },
+  "FUGAZI": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Faithful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Family": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "This criminal never acts alone. He is a member of an underworld network known as a \"family.\" Related by blood or not, members of the family are always treated like brothers and sisters. To fail to show loyalty, hospitality and brotherhood to those in the family is a grave insult, and is cause for many a feud. However, a character may not be expelled from the family. The only way he leaves is by his own death\u2014self-inflicted or otherwise. This trait grants a 1D affiliation with other characters bearing the Family trait. If the character harms, insults or otherwise runs afoul of another family member, he gains a 1D infamous reputation in the Family as well.",
+    "restrictions": "Kerrn Diazspherah, Human, Mukhadish Underworld setting and Vaylen setting characters only."
+  },
+  "Fanatical": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Fatalistic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Fazia to All": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "The Ghetto Sheef plays the part of the patriarch for the Kerrn living in the ghettos of human (and Vaylen) worlds. This trait gives the Ghetto Sheef a 1D affiliation with the ghetto and a 1D reputation as \u201cze sheef fazia.\u201d",
+    "restrictions": "Ghetto Sheef LP only."
+  },
+  "Fearless": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "Reduces hesitation by three. Feckless Feral"
+  },
+  "Feral": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Fetishist": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Fierce": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Filthy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Follow the Money": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Forged": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Forked Tongue": {
+    "type": "C-O",
+    "cost": 3,
+    "description": "Call-on for Soothing Platitudes and Falsehood."
+  },
+  "Formalist": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "This character rigidly adheres to proper form. For ritualizing a ceremony until the other players\u2019 eyes water, the player is granted a persona point."
+  },
+  "Fragger": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "For having been implicated\u2014but never convicted\u2014in the untimely death of one his former officers, this character has earned a 1D infamous reputation in the planet\u2019s predominant military."
+  },
+  "Frail": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Freak": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "So freakish is he, this character is put on display to attract customers. +2D to Conspicuous, +2 Ob to Inconspicuous."
+  },
+  "Friendly Face": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "Call-on for Circles when being a nice guy. Frighteningly Clinical Char"
+  },
+  "Frustrated": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Fuur Blood": {
+    "type": "Dt",
+    "cost": 1,
+    "description": "Trait List F, G"
+  },
+  "Gadgeteer": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "The gadgeteer may add a technology trait to an existing piece of technology (without having to roll) so long as it is appropriate to the device and makes everyone else look foolish for not noticing it/thinking of it before. Galvanizing Presence Good for Nothing Good Listener Googly Eyes Garbo"
+  },
+  "Generous": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Genius": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Gentle": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Gift of Ahmilahk": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Glad Hander": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Gracious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Greed": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Grim": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Groundhog": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Groundskeeper": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Gruff": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Guarded": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Hammer Lord": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "This trait makes the character a Peer of the Hammer. He has the right and obligation to raise a space-based fighting force\u2014a force of battlecraft, transports, gunboats and even fighters. A character with this trait may buy an affiliation with the hammer itself to represent his armed forces. A 1D affiliation represents a small or poorly kept force comprised mostly of mercator and conscripted civilian craft with crew with exponent 3 abilities. A 2D affiliation represents a force of retrofitted commercial ships with a smattering of smaller military craft. Crew have exponent 4 abilities. A 3D affiliation represents a force of system patrol craft and hammer cruisers with well-trained crew with exponent 5 abilities. A character with this trait is assumed to have minor functionaries appropriate to his rank available to him at all times\u2014the first eight lifepaths in the Hammer setting. No Circles test is required to bring these characters into play at the relevant exponent. Test Circles if a specialist is required, do not use the Skill Exponent modifier. He comes with his specialist skill at the exponent of the Hammer Lord\u2019s forces. If a higher exponent is desired, you may add the obstacle modifier.",
+    "restrictions": "Human only."
+  },
+  "Handsome": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Hard-Hearted": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Harried": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Harsh": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Hat-Passer": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Hater": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Haunted": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Hazed": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Healthy Respect for Power 1 pt Heretic"
+  },
+  "Heretical": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Homme Dur": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Honest": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Hotshot": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Humble": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Humiliated": {
+    "type": "Char",
+    "cost": 1
+  },
+  "I, Solzjah": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "The Kerrn Solzjah take their job very seriously. They are the last line of defense for their Omshiip. To be a Solzjah is to be a member of a close brotherhood, lasting throughout the Kerrn\u2019s life. This trait grants a 1D affiliation with other Kerrn who have this trait."
+  },
+  "Idealist": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "A player who writes idealistic Beliefs for a character with this trait is rewarded in a strange way. If his idealistic Beliefs are challenged and he abandons them, he earns two persona points and immediately loses this trait. If he keeps to his Idealist Beliefs, he earns one persona point as per the normal rules for Embodiment Beliefs."
+  },
+  "Ideologue": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "For every character he converts to his way of thinking, the Ideologue earns a persona point. The converted character must change one of his Beliefs to fall in line with the Ideologue."
+  },
+  "Illegal Crucis": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Hammer-class starships are piloted by means of a cerebral interface called a crucis. This is an electronic port that is built into the back of the head at the occipital lobe. Through this interface, the machine responds to mental commands and monitors vital signs. The crucis gets its name from the cross shape of the implant. It is large enough to be seen clearly on the back on the head. It is technically illegal in the Iron Empires for anyone who is not a Lord-Pilot to possess a crucis. However, most authorities look the other way so that traders, merchants and spacefarers may ply the trade routes and keep their worlds alive with vital commerce. Even so, it is not unheard of for a noble lord to fuse the crucis of smugglers, criminals or other spacefarers who\u2019ve earned his ire. Fusing the crucis renders the character unable to use the Helm skill. Doing so requires an Ob 3 Surgery test. Sometimes it\u2019s just easier to rip it out (which Maims the character). Also, in the case of most illegal implants, cybernetic surgeons have even found a method of implantation that allows the person to regrow his hair\u2014they do not have to be corvus. Imperious"
+  },
+  "Imperious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Imperious Demeanor": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Imposing": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Impulsive": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Innocent": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Iron Trained": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "Iron is the vernacular for a particular type of mechanized armor. It is perhaps a noble\u2019s single greatest status symbol\u2014an honor and a privilege allowed to only the nobility and the most accomplished warriors. The Iron Empires take their name from the symbolic image of wars and conquest led by nobles clad in iron. Though it is cumbersome, iron is ingenious in its design. It is a selfcontained environmental suit that turns a human being into a small tank. Power, locomotion, protection, and life support are all provided by the suit. An iron company is a formidable force. Iron cannot be operated without this trait. and Crucis trait.",
+    "restrictions": "Must have the Corvus"
+  },
+  "Irradiated": {
+    "type": "Char",
+    "cost": 1,
+    "description": "J Jaded"
+  },
+  "Jaded": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Jumpy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Keen": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Laconic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Lame Duck": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Late": {
+    "type": "Dt",
+    "cost": 5
+  },
+  "Lavish Taste": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character just can\u2019t resist expensive items, even if he can\u2019t afford them. Any failed Resources tests to acquire luxury items or ornate versions of practical goods in which tax is incurred earns the player a Fate point. The testing player may raise his Resources obstacle as he sees fit to represent his character\u2019s lavish taste. Law-Obsessed"
+  },
+  "Lazy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Leech": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Lifting Heavy Things": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Power when lifting something you really shouldn\u2019t be. If the call-on still fails, the character suffers a hernia."
+  },
+  "Light Sensitive": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "+1 Ob in br ight light. Lightdampening tech can mitigate this penalty."
+  },
+  "Light Sleeper": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "If there is ever a conflict surrounding sneak ing up on this sleeping character, the player may make a Perception or Observation test as if the character were awake."
+  },
+  "Like My Own\u00a0Hands": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for any ship-related skill test, so long as you say, \u201cI know this ship like my own hands!\u201d May only be used once per phase."
+  },
+  "Linguist": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Reduce the aptitude for learning languages by three."
+  },
+  "Loathed": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character has a 1D infamous reputation somewhere. Describe it for us, please. Logorrhea Lonely"
+  },
+  "Lonely": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Lost": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Louis Wu": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Loyal": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "There is an old saying: \u201cDeath is lighter than a feather, but duty is heavier than a mountain.\u201d This character lives by these words. The player may add a fourth Belief to his character centered around his Loyalty to another character. Should this trait ever be voted off, the character loses the Belief as well; should the Belief be changed, the trait is lost."
+  },
+  "Loyal to the Family": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "As the Loyal trait, but the Belief must center on their criminal family."
+  },
+  "Lucky": {
+    "type": "Dt",
+    "cost": 6,
+    "description": "For one test\u2014once\u2014the player may opt not to roll the dice, but to simply pass the test (by meeting the obstacle). Alternately, the player may use this trait as one free Personal Demons deeds point. After the trait has been used in one of those two manners, the ability is lost. It is replaced instead with a 1D reputation: Lucky! \u201cThis kid is so lucky. Remember when\u2026\u201d Lucky to Be in a Human Body"
+  },
+  "Lunatic": {
+    "type": "Dt",
+    "cost": 1,
+    "description": "This character always knows the phases of his world\u2019s moon or moons. Even if he\u2019s locked underground for 20 years. Kind of drives him crazy. M"
+  },
+  "Macbeth": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Macbeth is doomed. His doom is, in fact, foretold and inescapable. The player is encouraged to write his doom into one of his Beliefs. It always ends in his death. Please be as gory and descriptive as possible. The trick is to ensnare other people in his doom. Each character who changes a Belief to fall in line with Macbeth\u2019s doom earns Macbeth one persona point. As he nears his fate, Macbeth\u2019s options dwindle. Once the climax of his story has been reached\u2014it\u2019s time to confront his wife, the enemy has returned from abroad, etc.\u2014Macbeth may only use actions in the Duel of Wits, Psychic Duel, Firefight or even the Infection mechanics once each. After he\u2019s played that action into his doom, he may not use that action again\u2014ever. If he should survive his fate, which is unlikely, Macbeth should count himself quite unlucky, as he\u2019ll now live out the rest of his days dwelling on the horrors he\u2019s committed, waiting for some other young Macbeth to happen upon him and push him toward his grisly end. Maelcum"
+  },
+  "Maimed": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Makara Body": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Mangled": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Manipulative": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Mark of Privilege": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Those born into nobility bear certain telltale signs of their lineage. Their nose, their bearing, their skin or even their speech mark them as one of the privileged. This confers a 1D affiliation with nobility, but also adds +1 Ob to all Inconspicuous or Falsehood tests when masquerading as someone lower than their station.",
+    "restrictions": "Born to Rule, Vaylen Captain and Vaylen Command LPs only."
+  },
+  "Martyr": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "He will die for our sins. We all know it. We all want it (not that we would do anything to speed the process along\u2026). In him we shall be redeemed. The player whose character possesses this trait earns a persona point when taking steps in the game to martyr his character. The character must die for a lost cause\u2014preferably religious. Should this glorious death transpire, the character\u2019s remains instantly become holy relics. The first person to gather up those remains is granted all of the martyr\u2019s remaining artha. If he had no artha left at the time of his death, the relic grants a Deeds point to its new owner."
+  },
+  "Meek": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Mercenary": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Merciful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Meshhen Clan": {
+    "type": "Dt",
+    "cost": 6,
+    "description": "Meshhen (mes-hen) are a powerful line of Naiven with a long-standing military tradition. This lineage harkens back to the warriors of old\u2014the Meshhen being the first clan to take up arms in the interest of claiming Vaylen hosts. Meshhen typically follow that tradition; most are born into the Ksatriyen caste. This trait grants a 3D reputation among Vaylen as a warrior.",
+    "restrictions": "Meshhen Naiven only."
+  },
+  "Methodical": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Meticulous": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "The Meticulous character is neat and organized to the point of obsessiveness. The trait may be used as a call-on for one academic, craftsman, artisan or military skill of the player\u2019s choosing. Choose before play begins."
+  },
+  "Metropolitan": {
+    "type": "Dt",
+    "cost": 6,
+    "description": "The Metropolitan is charged with handling the secular business of running the Church\u2019s domains. He sets the rate of taxation, negotiates with other nations, communicates with the Church\u2019s powerful subjects and writes national law. A Metropolitan has several worlds under his supervision. He is the eye of the Primarch and enforces the supreme figure\u2019s policy. A Metropolitan\u2019s word is law on all matters, since he speaks in the name of the Primarch. A special council of metropolitans (the Council of Arch Antistes) is headquartered with the Primarch on Mosum. These men are the Primarch\u2019s chief advisors and have great reach throughout the Iron Empires. They indirectly influence the Church\u2019s destiny because when the Primarch dies, the council elects his successor. This individual is almost always chosen from their number, although for political reasons they have in the past selected a Metropolitan who is not on the council. No individual ranking below Metropolitan is ever chosen (though the rules do allow for it). This trait grants a 1D affiliation with the Council of Arch Antistes and a 1D reputation as a Metropolitan of the Mundus Humanitas. Militant Misanthropic Morose Mouthbreather",
+    "restrictions": "Cotar Antistes LP only."
+  },
+  "Militant": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Morose": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Mover": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Nihilist": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Nose for Trouble": {
+    "type": "C-O",
+    "cost": 3,
+    "description": "Trait List M, N, O"
+  },
+  "Numb": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "This character does not feel the effects of Superficial Wounds. Two Superficial Wounds do not subtract one die from this character\u2019s stats and skills."
+  },
+  "Number One!": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Obedient": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Obstinate": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Oddly Likeable": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Officer": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "The Officer trait grants the character access to the elite club of Hammer Captaincy (1D affiliation with hammer officers). Among Hammer Captains, seniority is of paramount importance. A captain who has been in the service longest has seniority over younger captains of ostensibly the same rank. If, in a Duel of Wits, a senior officer wishes to pull rank, he may rap his service ring on the table to show his displeasure. This is a warning to the junior officer. If the junior officer wishes to proceed in the Duel of Wits, the senior officer starts with a +2s bonus to his body of argument. However, if the junior officer wins the Duel with only a minor compromise, he gains a +1D to all Duel of Wits skills used against the senior officer in the future, and the senior officer cannot pull rank on the junior officer again. Such a stunt can cause quite a bit of resentment among the officers. Therefore, the junior officer may cede his moral victory (the advantage die) in deference to the senior officer\u2019s position as part of the compromise. The +1D is not available to the junior officer thereafter, but neither can the senior officer pull rank on him again. Vaylen Captain LPs only. Officious",
+    "restrictions": "Hammer Captain and"
+  },
+  "Officious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Offisah": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Omshiip Officer": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "T he S he ef is a hig h-ra n k i ng administrator in the Kerrn Omshiip government. This trait grants a 1D affiliation with the Kerrn Omshiip staff.",
+    "restrictions": "Kerrn Sheef LP only."
+  },
+  "Omshiip Staff": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "Kerrn Omshiip Staff are diligent and knowledgeable in their duties. They take the operation of the Omshiip very seriously. This trait reflects their training and dedication. The player may add +1D to one of his Omshiip setting lifepath skills. Please choose before play begins.",
+    "restrictions": "Kerrn Omshiip LPs only."
+  },
+  "Omshiip\u2019s Master": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "The Emcheef is the highest ranking Kerrn civilian. He is, in effect, the president of the Kerrn. His job is to administer and coordinate all branches of the Kerrn government and s o c iet y\u2014Vre ck, Omshiip, Omshec and Solzjah\u2014to ensure that there is enough water, food, oxygen, space, gravity, light, heat and other necessities for living on a scratchbuilt space station. Emcheefs are not elected. They earn their station by climbing through the officer branch of the Omshiip and then serve a sevenyear term. All Kerrn are eligible for this position, so long as they fulfill the requirements. It is a stressful and demanding job, and not many are up to it. This trait acts as a call-on for Circles for the Emcheef\u2014whether he\u2019s currently serving or not\u2014for matters surrounding the welfare of Omshiip and her attendant colonies. The stress of it also permanently increases hesitation by one.",
+    "restrictions": "Emcheef LP only."
+  },
+  "Open-Minded": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Optimist"
+  },
+  "Optimist": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Order Before Chaos": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Orphan": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Outcast": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This character has done something in his past that has gotten him thrown out of his community. He has a 1D infamous reputation to prove it. Please describe what happened to the character and what faction, Figure of Note or relationship on the planet was involved in or witness to the event."
+  },
+  "Outlaw": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "The outlaw has either committed a grievous crime or is perceived as an enemy of the established order. No law applies to this character\u2014he has no rights whatsoever. He cannot appeal to the courts or the mercy of a judge for anything\u2014they are not obligated to engage him in a Duel of Wits or hear him at all. Any man or beast may kill the outlaw and suffer no legal penalty for it. When the Outlaw trait is taken, the player must divide his resource points into two pools. Any resource points from his Born setting lifepaths go into one pool. He does not have access to these resources until the Outlaw trait is voted off. The character\u2019s remaining resource points may be spent as normal. Outlaws gain a 1D infamous reputation among the predominant government of the planet."
+  },
+  "Paranoid": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Patient": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Patriotic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Peacemaker": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "The Vaylen Princess is taught that her role is to be the peacemaker\u2014even though her Vaylen nature sees no need for such overtures. Call-on for Soothing Platitudes."
+  },
+  "Pecunious": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "+1D to Resources for all nontechnology related tests. Pedantic"
+  },
+  "Pedantic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Penny-wise": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Pessimist": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Pharisaical": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Picked Man": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Pious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Plain Face": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Inconspicuous when trying to avoid attention in crowds."
+  },
+  "Plain-Faced": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Polite": {
+    "type": "C-O",
+    "cost": 2
+  },
+  "Pompous": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Pragmatic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Predatory": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Privateer": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "This character possesses a letter of marque and reprisal from the planet\u2019s dominant form of government or an appropriate faction. This document grants the authorization to pass beyond the interplanetary borders of the nation (\u201cmarque,\u201d meaning frontier), and there to search, seize or destroy assets or personnel of a hostile foreign party (\u201creprisal\u201d), not necessarily a nation, to a degree and in a way that is proportional to the original offense. This trait grants the character +3s to his body of argument for a Duel of Wits surrounding any question of his right to capture cargo or otherwise enact reprisals. demands of his constituency in the stakes for his Duel of Wits and/or Infection mechanics conflicts earns him a persona point. Merchant League only. If taken by a Merchant League character, constituents are replaced by shareholders.",
+    "restrictions": "Civilian Commune or"
+  },
+  "Privileged Position": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "interact with various powerful figures in government and military. This character may ignore +1 Ob of the Higher or Lower Station penalty in Circles tests. Professional Professional Pride"
+  },
+  "Professional": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Professional Pride": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Prophet": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Protective": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Proud": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Proud Citizen": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Prudent": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Public Face": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Public Figure": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "Add +1D to any one of the char\u00ad acter\u2019s reputations. However, any Propaganda or Journalism tests made against the character receive a +1D advantage."
+  },
+  "Public Servant": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "The public servant is beholden to the will of his constituency. Including the"
+  },
+  "Pudgy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Quick-Witted": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "The Quick-Witted trait reduces hesitation by one action and grants the character +1D to any Rebuttal action in the Duel of Wits."
+  },
+  "Quiet": {
+    "type": "C-O",
+    "cost": 2
+  },
+  "REMF": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Rapier Wit": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "This character has a lightning-quick mind and a sharp tongue; he never hesitates to offer a cutting remark. In a Duel of Wits, if the player can interject a searing bon mot while his opponent is speaking, he gains +2D to his next verbal action. If the action is a versus test\u2014Rebuttal, Obfuscate, or Incite\u2014and the character with the Rapier Wit does not win the test, or if the action is a failed Dismiss, Rapier Wit may not be used again in the duel. Raw-Nerved Realistic Rebel"
+  },
+  "Rebellious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Reclusive": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Resentful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Resigned to Death": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Resolute": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Resourceful": {
+    "type": "C-O",
+    "cost": 5,
+    "description": "Call-on for Jury-Rigging, Scavenging, Soldiering and Survival. Righteous Romantic Royalist Rule of Three S Saccharine Sanguine Saturnine"
+  },
+  "Romantic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Rough": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Ruthless": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Sadistic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Sarcastic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Savvy": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "When a Savvy character wants something, he knows how to ask so people listen. Call-on for Circles when the character is implicitly threatening the use of force\u2014physical, social, financial or otherwise."
+  },
+  "Scheming": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Scum of the Galaxy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Scut Work": {
+    "type": "C-O",
+    "cost": 2
+  },
+  "Secret Language": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Seen It All": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Seen Too Much Too Young Dt"
+  },
+  "Self-Made Kerrn": {
+    "type": "C-O",
+    "cost": 2
+  },
+  "Self-Righteous": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Senator": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Shark-Toothed Smile": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Administration when the character has been handed a load of crap from his superiors. Call-on for Intimidation when the character is well-dressed and smiling. Seemingly Concerned Sharp Dresser"
+  },
+  "Sharp Dresser": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Sharp-Eyed": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "The Seemingly Concerned gain +1s to their body of argument in a Duel of Wits so long as they remain composed and, well, seemingly concerned about what the other side has to say."
+  },
+  "Showboat": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Conspicuous whenever the character hams it up for the camera and goes over the top."
+  },
+  "Shrewd": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "Shut Up Sickly Self-Satisfied"
+  },
+  "Skeletons in the Closet": {
+    "type": "C-O",
+    "cost": 4,
+    "description": "Call-on for Persuasion when currying political favor if the player takes a forbidden relationship that would ruin his career. If the player makes sure that another player has a relationship with the same character, he starts the phase with an extra persona point."
+  },
+  "Skeptical": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Slaggah": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "The Slaggah wants to take the easiest, safest and most direct option: Fire for full effect and slag the bitch. Unfortunately, that\u2019s not always an option. If the Slaggah character can convince his friends and superiors to let him do his job\u2014to destroy the sum\u2019bitch\u2014he earns a persona point. However, that point is only earned if the Slaggah does the convincing, and if there is some potential use for what is being destroyed or if what is being destroyed requires some sacrifice from one of the other characters\u2014 like a relationship or a valuable piece of technology. the Artillery or Strategy skills. Sleep Disorder Slight Build Slightly Warped",
+    "restrictions": "Only for characters with"
+  },
+  "Slow": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Smarter Than You": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Psychology affecting and used by this character. Smartest Guy in the Room 1 pt"
+  },
+  "Smug": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Solipsistic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Solitary": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Spock": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Stern": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Stern Demeanor": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Reduce hesitation by one when the character absolutely cannot be seen pissing his pants and crying for his mamma\u2014in front of his girl, his father, his superior, etc. However, when he is alone, this trait does not apply. Stinky"
+  },
+  "Stiff": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Stoic": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Strange": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Strange Airs": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Strict": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Stubborn": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Suicidal": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Sullen": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Superstitious": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Speaker of the"
+  },
+  "Surreptitious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Suspicious": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Steady Hands"
+  },
+  "Swagger": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Call-on for one skill that requires manual manipulation (and perhaps a Swindler"
+  },
+  "Sworn to the Fire": {
+    "type": "Dt",
+    "cost": 1,
+    "description": "Sodalis brethren may take a relation\u00ad ship with their cotar fomas at a reduced cost. 1 rp if friendly or loyal, 0 rps if hostile or inimical. T Tall-Dark-and-Murderous Char"
+  },
+  "Tenacious": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "Tolerant"
+  },
+  "The Story": {
+    "type": "C-O",
+    "cost": 3,
+    "description": "This character is adept at playing to his audience\u2014he\u2019s always got the right story on hand to impress them and win them to his side. Call-on for Falsehood and Begging."
+  },
+  "Think Big": {
+    "type": "Char",
+    "cost": 1,
+    "description": "Thirsty for Answers Char 1 pt This Is a Store Not a Library! 1 pt Thousand-Yard Stare"
+  },
+  "Thoughtful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Tolerant": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Tool of the State": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Tough": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Tough as Nails": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "This character does not have to make Steel tests for suffering pain or injury. Traditionalist Tragic Troubled Tweaker"
+  },
+  "Trusting": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Twitchy": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Ugly": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Undeterred": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "An Undeterred character may ignore the Let It Ride rule once per session for any test\u2014successful or failed. He must declare that he is undeterred by his own weakness, the enemy\u2019s strength, the bizarre circumstances or what have you. He may then retest. If he fails this time, he\u2019s subject to the standard rules. This is only applicable to tests for which the Let it Ride rule would apply, so it does not apply to a Duel of Wits, Firefight or Infection mechanics roll. It may only be used once per phase. Uneasy"
+  },
+  "Unflinching": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Unwelcome": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Useful": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "He has a knack for proving he\u2019s useful. An action that the character takes with the intent to prove his worth to another character\u2014an employer, a lover, etc.\u2014may be used as a linked test for the body of argument of a Duel of Wits with that character."
+  },
+  "Usurper": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "This Vaylen has crawled into the head of a leader of men and taken command of his underlings. This trait grants access to the Anvil Lord (for Commander) or Hammer Lord (for Captain) trait. In the infiltration or usurpation phase, the men under his command are unwitting dupes. In the invasion, they are hulled humans. V Vacant Stare Vainglorious Venal",
+    "restrictions": "Vaylen only"
+  },
+  "Vainglorious": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Vengeful": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Vibhuuten Clan": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Vig": {
+    "type": "Dt",
+    "cost": 4,
+    "description": "Vig is a system of loan and debt administered by criminal families in the neighborhoods in which they dwell. Whenever a character with this trait grants another character a loan, whether he openly states it or not, he expects to be repaid with interest. Repayment is equal to the obstacle of the loan, +1\u20113 (player\u2019s choice). If this price is not or cannot be paid, the criminal may name a suitable replacement or compensation. This can be a service to the family at a later time, material goods or promises of favors\u2014like an arranged marriage. If the vig replacement or compensation cannot or will not be paid, the criminal family takes great offense. The offending character earns a 1D infamous reputation among the family and their friends. In addition, the family will then attempt to collect its debt by any means and make an example of the offender, including theft, injury and destruction of property. If the character makes good on his vig payment, the infamous reputation is dropped and reprisals are cancelled.",
+    "restrictions": "Outcast and Criminal LPs"
+  },
+  "Vigilant": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Vindictive": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Warrior\u2019s Code": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Watchful": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Steel when surprised."
+  },
+  "We Rule These Streets": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Streetwise when on your home turf."
+  },
+  "Weary": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Weight of the Galaxy": {
+    "type": "Dt",
+    "cost": 7,
+    "description": "This character has an immense gravity and seriousness to his bearing. In a Duel of Wits where he is trying to impart the seriousness of a matter, he gains +4s to his body of argument. Weird Well-Heeled"
+  },
+  "Well-Heeled": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Well-Known": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Well-Spoken": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Rhetoric when composed and well-dressed."
+  },
+  "Well-Travelled": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for any \u201cwise\u201d involving place or travel. The exact wise may be chosen in play at an appropriate moment, but once chosen it becomes fixed to the trait and may not be changed."
+  },
+  "Whipped": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "This slave will obey anyone with a whip in hand. He may not engage in a social conflict with a whip-bearing character. *With apologies to Inazo Nitobe (1862 - 1933) Wife-Beater"
+  },
+  "Wigged": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Wise Aphorisms": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Withering Stare": {
+    "type": "C-O",
+    "cost": 2,
+    "description": "Call-on for Intimidation when the character is retaliating for a smart remark. Wizened"
+  },
+  "Word Is Law": {
+    "type": "Char",
+    "cost": 1
+  },
+  "World-Weary": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Worried": {
+    "type": "Char",
+    "cost": 1
+  },
+  "Wrongly Accused": {
+    "type": "Dt",
+    "cost": 1
+  },
+  "Yes, Boss": {
+    "type": "Dt",
+    "cost": 2,
+    "description": "You\u2019ve got a boss. He makes you do things you don\u2019t like doing. Every time the player carries out an order from his boss that just sets his teeth on edge, he earns a fate point. As long as he offers a cheery, \u201cYes, boss,\u201d of course."
+  },
+  "Your Eminence": {
+    "type": "Dt",
+    "cost": 5,
+    "description": "In the Iron Empires, barons and counts (depending on the empire) are referred to as \u201cYour Eminence.\u201d This trait indicates that the character was born into this rank. He need not have ever lived the life of a count/baron himself, but it is his birthright to be addressed as one. Failure to address this character by his honorific, \u201cYour Eminence,\u201d incurs a +2 Ob to Etiquette tests with this character until he decides to drop the matter. Be sure to read the Etiquette skill for details on how to use this to really punish a character. It should be noted that this trait confers no temporal power whatsoever. It is merely a title. Temporal power in the Iron Empires is conferred by one\u2019s status as a Hammer Lord, Anvil Lord, Forged Lord or Metropolitan.",
+    "restrictions": "Born to Rule LP only."
+  },
+  "Your Grace": {
+    "type": "Dt",
+    "cost": 7,
+    "description": "Dukes, princes and archcotare bear the appellation of \u201cYour Grace.\u201d The charac ter nee d not have experienced the actual duties of a duke or archcotare, but the rank is his to flaunt. To fail to refer to him by title is to lose one\u2019s head or the sanctity of one\u2019s mortal soul. Failure to address this character by his honorific, \u201cYour Grace,\u201d incurs a +3 Ob to Etiquette tests with the character until he decides to drop the matter. Be sure to read the Etiquette skill for details on how to use this to really punish a character. It should be noted that this trait confers no temporal power whatsoever. It is merely a title. Temporal power in the Iron Empires is conferred by one\u2019s status as a Hammer Lord, Anvil Lord, Forged Lord or Metropolitan.",
+    "restrictions": "Born to Rule LP only."
+  },
+  "Your Lordship": {
+    "type": "Dt",
+    "cost": 3,
+    "description": "This trait indicates that the character was born into lower nobility. He need not ever have led the life of a lord. However, his birthright is that of a lord, and he is accustomed to being addressed as \u201cYour Lordship.\u201d Failure to do so is an insult and incurs a +1 Ob to Etiquette tests with the character until he decides to drop the matter. Be sure to read the Etiquette skill for details on how to use this to really punish a character. It should be noted that this trait confers no temporal power whatsoever. It is merely a title. Temporal power in the Iron Empires is conferred by one\u2019s status as a Hammer Lord, Anvil Lord, Forged Lord or Metropolitan.",
+    "restrictions": "Born to Rule LP only."
+  },
+  "Zealous": {
+    "type": "Char",
+    "cost": 1
+  }
+}

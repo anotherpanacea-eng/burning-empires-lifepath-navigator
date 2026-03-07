@@ -52,10 +52,14 @@ The player must write **three Beliefs**. Each should:
 - "I will protect the Church" (no action, no stakes)
 - "I look out for number one" (pulls character out of conflict)
 
+**Framework — one of each:**
+1. **Ethical belief** — a moral or ideological stance
+2. **About another character** — connects to a PC or Figure of Note
+3. **Situation on the planet** — stakes in the current world/conflict
+
 **Tips:**
-- One Belief should connect to another PC or Figure of Note
-- One Belief should create internal conflict
 - Beliefs are for the PLAYER to express what they want from the game
+- At least one Belief should create internal conflict
 
 ---
 
@@ -76,6 +80,9 @@ Each lifepath grants:
 - **Stat**: Bonus to mental (+M), physical (+P), either (+M/P), or both (+M,P)
 - **Skills**: Points and a list of available skills
 - **Traits**: Points and a list of available traits
+
+### Repeating Lifepaths
+A lifepath may be repeated. 2nd time: normal points, but the **2nd** skill and trait on the list are required (if no 2nd trait, subtract 1 trait point). 3rd time: half skill/resource points (round down), no circles/traits/stats. 4th time: half resource points only, plus years.
 
 ### Human Settings Summary
 
@@ -217,11 +224,22 @@ Add lifepath stat bonuses to the appropriate pool:
 - **Forte** (max 6)
 
 **Derived Attributes:**
-- Mortal Wound = Power + Forte + 6
+- Mortal Wound = (Power + Forte) / 2 (round down) + 6, shade H
 - Reflexes = (Agility + Speed + Perception) / 3
 - Health = (Will + Forte) / 2
-- Steel = (Will + Forte + Perception) / 3
 - Hesitation = 10 - Will
+- Steel = base 3, modified by questionnaire:
+  - Soldier/warrior/lord-pilot LP? +1
+  - Severely wounded? +1 if also soldier, -1 if not
+  - Murdered/killed more than once? +1
+  - Tortured/enslaved/beaten (Will 5+: +1; Will 3-: -1)
+  - Sheltered life, free from violence? -1
+  - Competitive non-violent culture (debate, strategy, sports)? +1
+  - Given birth? +1
+  - Bright Mark or Mule trait? +1
+  - Perception 6+? +1
+  - Will 5+? +1
+  - Forte 6+? +1
 
 ---
 
@@ -232,7 +250,7 @@ Add lifepath stat bonuses to the appropriate pool:
 - **1 point to advance** an opened skill by +1
 - Skills max at B6 during burning
 - General skill points can open ANY skill
-- Required skill: First skill listed in each lifepath MUST be opened
+- Required skill: **1st skill** listed in each LP MUST be opened (**2nd skill** for repeated LPs)
 
 ### Process
 1. Use `chain.get_skills()` to list all skills available from lifepaths
@@ -263,46 +281,51 @@ print(maneuver_data.format_coverage(coverage))  # e.g. "15/24 (6/8 Inf, 6/8 Usu,
 **Psychologist:** Psychology, Psychohistory, Observation, Interrogation
 **Spacefaring:** Helm, Navigation, Pilot, Sensors, Ship Management
 
-### Skill Roots (Common Skills)
+### Skill Roots
 
-| Skill | Root | Tech Required |
-|-------|------|---------------|
-| Accounting | Per | Color |
-| Administration | Per | No |
+Full skill roots are in **`skill_roots.json`** (107 skills with root stats and technology requirements).
+
+**Key combat/social/maneuver skills:**
+
+| Skill | Root | Tech |
+|-------|------|------|
 | Assault Weapons | Agi | Yes |
-| Bargaining | Wil | No |
 | Close Combat | Wil/Agi | No |
 | Command | Wil | No |
-| Doctrine | Per | No |
-| Falsehood | Wil | No |
-| Helm | Per/Agi | Yes |
-| Interrogation | Wil | No |
+| Extortion | Wil | No |
+| Finance | Per | Color |
+| Infiltration | Spd | No |
 | Intimidation | Wil | No |
-| Navigation | Per | Color |
 | Oratory | Wil | No |
 | Persuasion | Wil | No |
-| Pilot | Per/Agi | Yes |
-| Psychology | Per/Wil | No |
-| Security Rigging | Per/Agi | Yes |
-| Seduction | Wil | No |
-| Signals | Per | Yes |
-| Soldiering | Wil/Per | No |
-| Strategy | Per | No |
-| Tactics | Wil/Per | No |
+| Psychology | Per | No |
+| Rhetoric | Wil | No |
+| Security | Per | No |
+| Soldiering | Wil/Per | Color |
+| Strategy | Wil/Per | Color |
+| Streetwise | Per | No |
+| Tactics | Per | No |
+
+**Opening exponent** = highest root stat ÷ 2, round down. For dual-root skills, use whichever stat is higher.
 
 ---
 
 ## Step 7: Traits
 
+### Purchasing LP Traits
+Each LP grants trait points and a trait list. The **1st trait** on each LP's list is **required** (2nd trait for repeated LPs). All traits from LP lists cost **1 pt each**, whether Char, C-O, or Dt. Remaining trait points can buy additional traits from your LP lists at 1 pt each.
+
+Excess trait points (beyond LP traits) can purchase traits from the **general trait list** (`trait_list.json` — 361 traits with types, costs, descriptions, and restrictions) at their full cost (below).
+
 ### Types
 
-**Character Traits (Char)** — Cost 1 pt. Define personality and appearance. No mechanical effect but establish roleplay hooks.
+**Character Traits (Char)** — General cost: 1 pt. Define personality and appearance. No mechanical effect but establish roleplay hooks.
 - Examples: Ambitious, Bitter, Cruel, Cynical, Jaded, Manipulative, Mercenary, Patient, Skeptical
 
-**Call-On Traits (C-O)** — Cost 2-4 pts. Once per session, reroll failures when the trait applies.
+**Call-On Traits (C-O)** — General cost: 2-4 pts. Once per session, reroll failures when the trait applies.
 - Examples: Bookworm (for research), Calm Demeanor (for composure), Charming (for social), Nimble (for agility)
 
-**Die Traits (Dt)** — Cost 1-6 pts. Permanent mechanical bonuses or special abilities.
+**Die Traits (Dt)** — General cost: 1-6 pts. Permanent mechanical bonuses or special abilities.
 - Examples: Anvil Trained (negates armor penalties), Bright Mark (grants psychic powers), Iron Trained (power armor use)
 
 ### Important Traits
@@ -344,42 +367,113 @@ Write **three Instincts** — automatic behaviors the character ALWAYS does.
 - Unspent points become Resources exponent
 
 **Circles Points:**
-- Split between Affiliations (1D each) and Reputations (1D each)
-- Circles exponent = lower of the two totals
+Total circles points from all lifepaths. Spend on:
 
-**Relationships:**
-- Buy specific NPCs with circles points
-- Relationships can be allies, rivals, enemies, family
+- **Boosting Base Circles:** 3 pts per +1D to base Circles exponent
+- **Reputations** (1 pt per 1D, max 3D): Renown within your Circles/affiliations
+  - 1D: Local/minor — best shot in the unit, the neighborhood thug
+  - 2D: Regional/powerful — old war hero, famous captain, notorious smuggler
+  - 3D: Planet-wide/the boss — wealthy magnate, infamous psychologist, Forged Lord
+- **Affiliations** (1 pt per 1D, max 3D): Membership in organizations, added to Circles as advantage dice
+  - 1D: Small/local — a family branch, a cabal, a black ops group
+  - 2D: Large/regional — a trade guild, a manor, a pirate fleet
+  - 3D: Planetary/ruling — a merchant league, a duchy, a governor's council
+- **Relationships:** Buy specific NPCs (allies, rivals, enemies, family) with circles points
+- **One free relationship** — all characters begin with one relationship at no cost
 
 ---
 
-## Step 11: Technology
+## Step 11: Technology & Resources
 
-Use resource points to purchase:
-- Weapons (pistols, rifles, assault weapons)
-- Armor (Iron, Anvil armor)
-- Vehicles
-- Communications gear
-- Special equipment
+Total the character's resource points (rps) from all lifepaths. These points buy gear, property, and technology. The unspent remainder becomes the character's **starting Resources exponent**.
 
-(Full costs in Technology Burner chapter)
+### Color Items (Free)
+
+Every character enters play with personal trappings appropriate to station: clothing, shoes, vestments, personal effects, jewelry, ceremonial items. These have **no mechanical effect** — they are color. The player describes them freely. If a player wants to bring color tech into the mechanics during play, he'll need to make a roll.
+
+### Lifepaths Govern Gear
+
+What a character can acquire is limited to what's feasible from his lifepaths — legal for his station, appropriate to his occupation, not banned on the planet. The GM has final say: accountants can't have squad support weapons; soldiers in civilian life can't buy military gear; a noble lord-pilot has access to an arsenal regardless of later careers. Infeasible, illegal, or regulated items may be purchased at GM discretion.
+
+### Skills and Tools
+
+Many skills require technology ("tools" or "workshop") to use without penalty. Check `skill_roots.json` — entries with `"technology": "Yes"` require tools. A tool set or workshop appropriate to the character's lifepaths costs **1 rp**.
+
+### Basic Purchases (1 rp)
+
+For **one resource point**, a player may buy any weapon, form of protection, or vehicle that is appropriate to his character's station and the world's tech index. Choose from the items listed in the relevant equipment chapters. These basic items come with their standard tech traits for free.
+
+**Advanced or illegal technology** costs **2 rps** and requires GM consent.
+
+### Burning Technology (Custom Gear)
+
+A player may spend resource points to modify purchased gear (add a scope, install an AI) or create novel devices from scratch (an energy scanner, a custom implant). The cost depends on the world's tech index:
+
+| World Index | Tech Trait Points per 1 rp |
+|-------------|---------------------------|
+| Sub index   | 2 |
+| Zero index  | 3 |
+| Low index   | 4 |
+| High index  | 5 |
+
+Multiple rps may be pooled for expensive traits. Consult the Technology Burner for trait costs (Enhancement, Advantage, etc.).
+
+**Example:** A psycho-helmet with memory recording (Enhancement) and +1D to Psychology (Advantage) costs 11 tech trait points. On a high index world (5 pts/rp), that's 3 rps — or 2 rps if the player can trim one trait point.
+
+### Trait-Gated Gear
+
+Some gear requires specific traits:
+
+| Required Trait | Unlocks |
+|---------------|---------|
+| Anvil Trained | Anvil armor: 1 rp basic, 2 rps with an additional Ob 4 tech trait |
+| Iron Trained | Iron (power armor): Low index → 1 rp for index 4, 2 rps for index 5. High index → 1 rp for index 5 |
+| Hammer Lord, Anvil Lord, or Forged Lord | Attack sleds, assault sleds, assault shuttles, patrol craft, hammer cruisers. Anvil Lords limited to assault shuttles and smaller |
+| Illegal Crucis, Corvus and Crucis, Merchant Fleet Captain, or equivalent spacefaring trait | Civilian hammer or mercator vessels (plus appropriate lifepaths) |
+
+### Property (1+ rp)
+
+Spending a resource point on property establishes a location — fortress, safe house, business, hideout. The character starts with sole access and knowledge; others must ask permission, do legwork, or break in.
+
+Property comes bundled with **free tech traits**: each rp spent on property gives one rp equivalent of tech for the world's index. This tech must be spent on security systems, defenses, hidey-holes, medical suites, and other property features.
+
+**Example:** 2 rps on a safe house on a low index world = 2 × 4 = 8 tech trait points for security, hidden exits, medical gear, etc.
+
+### Assigned Gear (GM Discretion)
+
+The GM may assign gear at no cost when the scenario warrants it — soldiers on military missions get standard-issue weapons and vehicles. Players only spend rps on personal gear better than what's provided.
+
+### Starting Resources Exponent
+
+Unspent rps become the character's starting **Resources exponent**. Resources is an attribute tested during play for purchases, bribes, and financial leverage.
+
+**Zero Resources** is legal but painful — you can't test zero dice, so someone has to give you a die (loan, gift, payment) before you can advance.
+
+### Decision Framework
+
+When spending rps, weigh:
+1. **Essential tools** — Does the character need tools/workshop for key skills? (1 rp each)
+2. **Signature gear** — One weapon, armor, or vehicle appropriate to concept (1 rp)
+3. **Custom tech** — Novel devices or modifications (cost varies by index)
+4. **Property** — Establishes a base of operations with free security tech
+5. **Resources stat** — Every unspent rp is a die for financial tests in play. Resources 0 is crippling; Resources 3+ gives real flexibility
 
 ---
 
 ## Step 12: Starting Artha
 
-Based on number of lifepaths:
+Starting artha depends on the **main character's** number of lifepaths:
 
 | Lifepaths | Fate | Persona | Deeds |
 |-----------|------|---------|-------|
-| 3 | 5 | 3 | 1 |
-| 4 | 4 | 3 | 1 |
 | 5 | 3 | 2 | 1 |
 | 6 | 3 | 2 | 0 |
 | 7 | 2 | 1 | 0 |
 | 8 | 1 | 1 | 0 |
 | 9 | 1 | 0 | 0 |
 | 10+ | 0 | 0 | 0 |
+
+**Subordinate characters:** If a player has a subordinate (bodyguard/assistant relationship), artha is based on the main character only. The player divides starting artha between the two characters however he wishes.
 
 ---
 
@@ -408,6 +502,12 @@ Based on number of lifepaths:
 - Tags for requirement matching
 
 This is the primary data file used by the solver.
+
+### `skill_roots.json`
+107 skills with root stats, technology requirements, and practice cycles. Use to determine opening exponents (root ÷ 2, round down), check whether a skill requires tools/workshop, and reference training times.
+
+### `trait_list.json`
+361 traits (89 Dt, 32 C-O, 240 Char) with types, costs, descriptions, and restrictions. LP traits always cost 1 pt; general list costs apply only when purchasing outside your LP lists.
 
 ### `maneuver_skills.json`
 Maps the 8 Infection maneuvers to their appropriate skills for each of the 3 phases (Infiltration, Usurpation, Invasion). Used by ManeuverData to compute coverage. Includes skill aliases (e.g., "Law" maps to "Imperial Law", "Church Law", etc.).
@@ -451,3 +551,16 @@ Maneuvers: 15/24 (6/8 Inf, 6/8 Usu, 3/8 Inv)
 1. Always have an escape route planned before entering any deal
 2. Never let my crew see me show fear
 3. When in doubt, bribe first, shoot second
+
+---
+
+## Subordinate Characters
+
+Characters acquired through relationships (gang leaders, apprentices, etc.) are built with restrictions:
+
+- **2 fewer lifepaths** than the associated PC
+- **All skills capped at exponent 4**
+- **Must pay a 2-pt relationship** with the PC from their circles points
+- **One free relationship** (same as PCs)
+- Stats, traits, Steel, circles, and wound tolerances follow normal rules
+- Resources are typically minimal

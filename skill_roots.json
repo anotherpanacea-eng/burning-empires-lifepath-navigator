@@ -1,0 +1,644 @@
+{
+  "Accounting": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Administration": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Advanced Mathematics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Almanac": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Amercement": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "5r/10d/15c"
+  },
+  "Ancient Languages": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Appraisal": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "2r/4d/6c"
+  },
+  "Architect": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Armorer": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Artillery": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Assault Weapons": {
+    "root": "Agi",
+    "technology": "No",
+    "practice_cycle": "1 m",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Back-Breaking Labor": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Bargaining": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Begging": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Biology": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "4r/8d/12c"
+  },
+  "Body Service": {
+    "root": "Wil/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Bureaucracy": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Cartography": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Child Rearing": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Close Combat": {
+    "root": "Wil/Agi",
+    "technology": "No",
+    "practice_cycle": "1 m",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Command": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Composition": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Conspicuous": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Cooking": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Counterfeiting": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Crew": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Cryonics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "5r/10d/15c"
+  },
+  "Cryptography": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "4r/8d/16c"
+  },
+  "Demonology": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Divination": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Engineering": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Estate Management": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Etiquette": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Eugenics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "6r/8d/16c"
+  },
+  "Excavation": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Explosives": {
+    "root": "Per/Agi",
+    "technology": "Yes",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "4r/8d/16c"
+  },
+  "Extortion": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Fabrication": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Farming": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Field Dressing": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Finance": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Fire Control": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Folklore": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Food Service": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/2d/4c"
+  },
+  "Foreign Languages": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Forgery": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/4d/12c"
+  },
+  "Fortifications": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Fusion Dynamics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "6r/8d/16c"
+  },
+  "Helm": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/5d/10c"
+  },
+  "Heraldry": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "History": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Husbandry": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Hydrology": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "6r/8d/16c"
+  },
+  "Inconspicuous": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Infiltration": {
+    "root": "Spd",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Instruction": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Interrogation": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Intimidation": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "1r/2d/4c"
+  },
+  "Journalism": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Jury-Rigging": {
+    "root": "Wil/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Law": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "5r/10d/15c"
+  },
+  "Logistics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "5r/10d/15c"
+  },
+  "Manufacture": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Meditation": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "4r/8d/12c"
+  },
+  "Mending": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Mummery": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Munitions": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Musical Instrument": {
+    "root": "Wil/Agi",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "1r/2d/4c"
+  },
+  "Navigation": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/5d/10c"
+  },
+  "Oratory": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "1r/2d/4c"
+  },
+  "Persuasion": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "1r/2d/4c"
+  },
+  "Pharmacology": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Philosophy": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Physical Training": {
+    "root": "Pow/Spd",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Physics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "6r/8d/16c"
+  },
+  "Pilot": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/3d/6c"
+  },
+  "Propaganda": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Psychohistory": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "2 yrs",
+    "hours_per_day": "6r/8d/16c"
+  },
+  "Psychology": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Recon": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Repair": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Research": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Rhetoric": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Riding": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "1r/2d/4c"
+  },
+  "Scavenging": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  },
+  "Science": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Security": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  },
+  "Security Rigging": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  },
+  "Seduction": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Ship Management": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  },
+  "Shipwright": {
+    "root": "Per/Agi",
+    "technology": "No",
+    "practice_cycle": "1 yr",
+    "hours_per_day": "6r/8d/16c"
+  },
+  "Signals": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "2r/4d/6c"
+  },
+  "Sleight of Hand": {
+    "root": "Agi",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  },
+  "Smuggling": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Soldiering": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Soothing Platitudes": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Squad Support Weapons": {
+    "root": "Agi",
+    "technology": "No",
+    "practice_cycle": "1 m",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Strategy": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Strategy Games": {
+    "root": "Wil/Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "3r/6d/12c"
+  },
+  "Streetwise": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Suasion": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Symbology": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "4r/8d/16c"
+  },
+  "Tactics": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  },
+  "Torture": {
+    "root": "Wil/Per",
+    "technology": "Color",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "4r/8d/16c"
+  },
+  "Ugly Truth": {
+    "root": "Wil",
+    "technology": "No",
+    "practice_cycle": "1 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
+  "Vaylen Philosophy": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "4r/8d/16c"
+  },
+  "Vehicular Weapons": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "3 ms",
+    "hours_per_day": "3r/6d/9c"
+  }
+}
