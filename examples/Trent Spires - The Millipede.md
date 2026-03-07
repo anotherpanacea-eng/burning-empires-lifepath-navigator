@@ -239,11 +239,19 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex from Gunsel to Physical)
 
 | Trait | Type | Source | Cost | Note |
 |-------|------|--------|------|------|
-| FUGAZI | Dt | Soldier | 1 | Required (1st) |
+| FUGAZI | Char | Soldier | 1 | Required (1st) |
 | Oddly Likeable | Char | Sergeant | 1 | Required (1st) |
 | Loyal to the Family | Dt | Gunsel | 1 | Required (1st) |
 | Booming Voice | C-O | Sergeant | 1 | Optional |
-| We Rule These Streets | Dt | Gunsel | 1 | Optional |
+| We Rule These Streets | C-O | Gunsel | 1 | Optional |
+
+### Trait Descriptions
+
+**Loyal to the Family** (Dt, req'd) — As the Loyal trait, but the Belief must center on their criminal family. The player may add a fourth Belief centered around loyalty to another character. If this trait is voted off, the Belief is lost; if the Belief is changed, the trait is lost.
+
+**Booming Voice** (C-O) — Call-on for Conspicuous.
+
+**We Rule These Streets** (C-O) — Call-on for Streetwise when on your home turf.
 
 ## Resources & Circles
 - **Resource points:** 4 rp
