@@ -3,6 +3,16 @@
 ## Concept
 Connected semi-legit fixer. Noble birth, political operator, double criminal. Pulls strings, doesn't spot tails.
 
+## Beliefs
+1. There is power in a union.
+2. The Vaylen Figure of Note is the best smuggler in the galaxy.
+3. This planet won't run without Trent Spires.
+
+## Instincts
+1. We are stronger together. (It's dangerous to go alone, take Nix.)
+2. Never trust a psychologist.
+3. Always have a way off-planet arranged.
+
 ## Lifepath Chain
 Born to Rule (Nobility) → Student (Commune) → Financier (Commune) → Politico (Commune) → Criminal (O&C) → Criminal (O&C)
 
@@ -106,46 +116,6 @@ Physical pool: 13 (13 base)
 
 **Determined** (C-O) — Reroll any one failed skill/stat/attribute test associated with one of his Beliefs. Once per phase.
 
-## Maneuver Coverage: 19/24
-
-### Infiltration: 8/8
-| Maneuver | Skill | Rating |
-|----------|-------|--------|
-| Assess | Streetwise | 6 |
-| Conserve | Psychology, Security | 2 |
-| Flak | Rhetoric, Persuasion | 6 |
-| Gambit | Tactics, Psychology | 6 |
-| Go to Ground | Persuasion | 6 |
-| Inundate | Tactics | 6 |
-| Pin | Extortion | 6 |
-| Take Action | Rhetoric | 6 |
-
-### Usurpation: 8/8
-| Maneuver | Skill | Rating |
-|----------|-------|--------|
-| Assess | Security | 2 |
-| Conserve | Finance, Tactics | 6 |
-| Flak | Psychology | 2 |
-| Gambit | Finance, Psychology | 6 |
-| Go to Ground | Streetwise | 6 |
-| Inundate | Tactics, Psychology | 6 |
-| Pin | Finance | 6 |
-| Take Action | Rhetoric, Finance, Tactics, Psychology | 6 |
-
-### Invasion: 3/8
-| Maneuver | Skill | Rating |
-|----------|-------|--------|
-| Assess | Finance | 6 |
-| Conserve | — | MISS |
-| Flak | — | MISS |
-| Go to Ground | Tactics | 6 |
-| Gambit | — | MISS |
-| Inundate | — | MISS |
-| Pin | Tactics | 6 |
-| Take Action | — | MISS |
-
-**Invasion gaps:** Need Strategy, Propaganda, Logistics, Cryptography, Shipwright/Manufacture/Fusion Dynamics
-
 ## Resources
 - **Resource points:** 12 rp
 - **Gear:** None — no skills require tools, no trait-gated gear
@@ -167,16 +137,6 @@ Physical pool: 13 (13 base)
 - **Health:** 6 (Will 6 + Forte 6 = 12 ÷ 2)
 - **Physical Tolerances:** Su H4 / Inj H7 / Ma H8 / Mo H10
 
-## Beliefs
-1. There is power in a union.
-2. The Vaylen Figure of Note is the best smuggler in the galaxy.
-3. This planet won't run without Trent Spires.
-
-## Instincts
-1. We are stronger together. (It's dangerous to go alone, take Nix.)
-2. Never trust a psychologist.
-3. Always have a way off-planet arranged.
-
 ## Remaining Steps
 - [x] Beliefs (3)
 - [x] Instincts (3)
@@ -189,6 +149,12 @@ Physical pool: 13 (13 base)
 
 ## Concept
 Ex-military street boss. Muscle and discipline for the Millipede's operation.
+
+## Beliefs
+1. Trent Spires will save the Syndicate, and I must keep him safe.
+
+## Instincts
+1. Always sweep the room before entering.
 
 ## Lifepath Chain
 Born on the Streets (O&C) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C)
@@ -272,14 +238,50 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex from Gunsel to Physical)
 - **Health:** 4 (Will 4 + Forte 4 = 8 ÷ 2)
 - **Physical Tolerances:** Su H3 / Inj H5 / Ma H8 / Mo H10
 
-## Beliefs
-1. Trent Spires will save the Syndicate, and I must keep him safe.
-
-## Instincts
-1. Always sweep the room before entering.
-
 ## Remaining Steps
 - [x] Resources: 4 rp → 1 rp weapon + Resources 3
 - [x] Beliefs (1)
 - [x] Instincts (1)
 - [ ] Artha (split from Trent's pool — see above)
+
+---
+
+# Maneuver Coverage: Trent Spires — 19/24
+
+## Infiltration: 8/8
+| Maneuver | Skill | Rating |
+|----------|-------|--------|
+| Assess | Streetwise | 6 |
+| Conserve | Psychology, Security | 2 |
+| Flak | Rhetoric, Persuasion | 6 |
+| Gambit | Tactics, Psychology | 6 |
+| Go to Ground | Persuasion | 6 |
+| Inundate | Tactics | 6 |
+| Pin | Extortion | 6 |
+| Take Action | Rhetoric | 6 |
+
+## Usurpation: 8/8
+| Maneuver | Skill | Rating |
+|----------|-------|--------|
+| Assess | Security | 2 |
+| Conserve | Finance, Tactics | 6 |
+| Flak | Psychology | 2 |
+| Gambit | Finance, Psychology | 6 |
+| Go to Ground | Streetwise | 6 |
+| Inundate | Tactics, Psychology | 6 |
+| Pin | Finance | 6 |
+| Take Action | Rhetoric, Finance, Tactics, Psychology | 6 |
+
+## Invasion: 3/8
+| Maneuver | Skill | Rating |
+|----------|-------|--------|
+| Assess | Finance | 6 |
+| Conserve | — | MISS |
+| Flak | — | MISS |
+| Go to Ground | Tactics | 6 |
+| Gambit | — | MISS |
+| Inundate | — | MISS |
+| Pin | Tactics | 6 |
+| Take Action | — | MISS |
+
+**Invasion gaps:** Need Strategy, Propaganda, Logistics, Cryptography, Shipwright/Manufacture/Fusion Dynamics
