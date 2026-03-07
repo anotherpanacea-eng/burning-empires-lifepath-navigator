@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trent Spires — The Millipede</title>
+<style>
+  :root {
+    --bg: #1a1a1e;
+    --card: #24242a;
+    --border: #3a3a42;
+    --text: #d4d4d8;
+    --muted: #8e8e96;
+    --accent: #c9a54e;
+    --accent-dim: #a07e2e;
+    --heading: #e8e8ec;
+    --tag-dt: #6ea8d9;
+    --tag-co: #7cc97c;
+    --tag-char: #c98c6e;
+    --miss: #c94e4e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-dim);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 .subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    font-weight: 400;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    color: var(--heading);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .concept {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lifepath-chain {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .lifepath-chain .arrow { color: var(--accent-dim); }
+  .lifepath-chain .setting { color: var(--muted); font-size: 0.85rem; }
+  .lifepath-chain .age { color: var(--accent); font-weight: 600; margin-top: 0.5rem; display: block; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  th {
+    text-align: left;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 0.35rem 0.75rem;
+    border-bottom: 1px solid #2a2a30;
+  }
+
+  tr:hover td { background: rgba(201, 165, 78, 0.04); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .stat-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-align: center;
+    padding: 0.6rem 0.25rem;
+  }
+
+  .stat-box .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  .stat-box .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  .derived-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .derived-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .derived-item .label { color: var(--muted); font-size: 0.85rem; }
+  .derived-item .value { color: var(--heading); font-weight: 600; font-size: 1.1rem; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tag-dt { background: rgba(110,168,217,0.15); color: var(--tag-dt); }
+  .tag-co { background: rgba(124,201,124,0.15); color: var(--tag-co); }
+  .tag-char { background: rgba(201,140,110,0.15); color: var(--tag-char); }
+
+  .trait-desc {
+    background: var(--card);
+    border-left: 3px solid var(--border);
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
+  }
+
+  .trait-desc.dt { border-left-color: var(--tag-dt); }
+  .trait-desc.co { border-left-color: var(--tag-co); }
+
+  .trait-desc .trait-name {
+    font-weight: 600;
+    color: var(--heading);
+  }
+
+  .maneuver-phase {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+  }
+
+  .phase-full { background: rgba(124,201,124,0.15); color: var(--tag-co); }
+  .phase-partial { background: rgba(201,165,78,0.15); color: var(--accent); }
+
+  .miss { color: var(--miss); font-style: italic; }
+
+  .belief, .instinct {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .belief::before {
+    content: attr(data-num);
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+
+  .instinct::before {
+    content: attr(data-num);
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+
+  .resource-stat {
+    background: var(--card);
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .resource-stat .label { color: var(--muted); font-size: 0.8rem; }
+  .resource-stat .value { color: var(--accent); font-size: 1.4rem; font-weight: 700; }
+
+  .divider {
+    border: none;
+    border-top: 2px solid var(--accent-dim);
+    margin: 3rem 0;
+  }
+
+  .sub-header {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .pool-note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .artha-note {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+
+  .artha-note strong { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .stat-grid { grid-template-columns: repeat(3, 1fr); }
+    .derived-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TRENT SPIRES ============ -->
+
+<h1>Trent Spires
+  <span class="subtitle">aka "The Millipede" — The Spider</span>
+</h1>
+<p class="concept">Connected semi-legit fixer. Noble birth, political operator, double criminal. Pulls strings, doesn't spot tails.</p>
+
+<h2>Lifepath Chain</h2>
+<div class="lifepath-chain">
+  Born to Rule <span class="setting">(Nobility)</span>
+  <span class="arrow">→</span> Student <span class="setting">(Commune)</span>
+  <span class="arrow">→</span> Financier <span class="setting">(Commune)</span>
+  <span class="arrow">→</span> Politico <span class="setting">(Commune)</span>
+  <span class="arrow">→</span> Criminal <span class="setting">(O&amp;C)</span>
+  <span class="arrow">→</span> Criminal <span class="setting">(O&amp;C)</span>
+  <span class="age">35 years (33 base + 2 setting jumps)</span>
+</div>
+
+<h2>Stats</h2>
+<div class="stat-grid">
+  <div class="stat-box"><div class="label">Will</div><div class="value">6</div></div>
+  <div class="stat-box"><div class="label">Per</div><div class="value">4</div></div>
+  <div class="stat-box"><div class="label">Agi</div><div class="value">2</div></div>
+  <div class="stat-box"><div class="label">Spd</div><div class="value">3</div></div>
+  <div class="stat-box"><div class="label">Pow</div><div class="value">2</div></div>
+  <div class="stat-box"><div class="label">For</div><div class="value">6</div></div>
+</div>
+<p class="pool-note">Mental 10 (7 base + 1M Student + 2 flex Criminal×2) · Physical 13 (13 base)</p>
+
+<h2>Derived Stats</h2>
+<div class="derived-grid">
+  <div class="derived-item"><span class="label">Steel</span><span class="value">8</span></div>
+  <div class="derived-item"><span class="label">Hesitation</span><span class="value">4</span></div>
+  <div class="derived-item"><span class="label">Reflexes</span><span class="value">3</span></div>
+  <div class="derived-item"><span class="label">Health</span><span class="value">6</span></div>
+  <div class="derived-item"><span class="label">Resources</span><span class="value">12</span></div>
+</div>
+<p class="pool-note">Tolerances: Su H4 · Inj H7 · Ma H8 · Mo H10</p>
+
+<h2>Skills</h2>
+<table>
+  <thead>
+    <tr><th>Skill</th><th>Rating</th><th>Root</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Rhetoric</td><td>6</td><td>Wil</td><td>Student</td></tr>
+    <tr><td>Persuasion</td><td>6</td><td>Wil</td><td>Criminal #2 req'd</td></tr>
+    <tr><td>Tactics</td><td>6</td><td>Per</td><td>Criminal</td></tr>
+    <tr><td>Streetwise</td><td>6</td><td>Per</td><td>Criminal</td></tr>
+    <tr><td>Finance</td><td>6</td><td>Per</td><td>Financier req'd</td></tr>
+    <tr><td>Extortion</td><td>6</td><td>Wil</td><td>General</td></tr>
+    <tr><td>Intimidation</td><td>6</td><td>Wil</td><td>Criminal #1 req'd</td></tr>
+    <tr><td>History</td><td>5</td><td>Per</td><td>Student req'd</td></tr>
+    <tr><td>Advanced Mathematics</td><td>2</td><td>Per</td><td>Student</td></tr>
+    <tr><td>Psychology</td><td>2</td><td>Per</td><td>General</td></tr>
+    <tr><td>Security</td><td>2</td><td>Per</td><td>General</td></tr>
+    <tr><td>Contributions-wise</td><td>2</td><td>Per</td><td>Politico req'd</td></tr>
+    <tr><td>Bribe-wise</td><td>2</td><td>Per</td><td>Criminal</td></tr>
+    <tr><td>Criminal-wise</td><td>2</td><td>Per</td><td>Criminal</td></tr>
+    <tr><td>Black Market-wise</td><td>2</td><td>Per</td><td>Criminal</td></tr>
+    <tr><td>Merchant League-wise</td><td>2</td><td>Per</td><td>Politico</td></tr>
+    <tr><td>Media-wise</td><td>2</td><td>Per</td><td>Politico</td></tr>
+  </tbody>
+</table>
+
+<h2>Traits</h2>
+<table>
+  <thead>
+    <tr><th>Trait</th><th>Type</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Mark of Privilege</td><td><span class="tag tag-dt">Dt</span></td><td>Born to Rule</td></tr>
+    <tr><td>Educated</td><td><span class="tag tag-dt">Dt</span></td><td>Student</td></tr>
+    <tr><td>Well-Heeled</td><td><span class="tag tag-char">Char</span></td><td>Financier</td></tr>
+    <tr><td>Ambitious</td><td><span class="tag tag-char">Char</span></td><td>Politico</td></tr>
+    <tr><td>Family</td><td><span class="tag tag-dt">Dt</span></td><td>Criminal #1</td></tr>
+    <tr><td>Vig</td><td><span class="tag tag-dt">Dt</span></td><td>Criminal #2</td></tr>
+    <tr><td>Savvy</td><td><span class="tag tag-co">C-O</span></td><td>Financier</td></tr>
+    <tr><td>Determined</td><td><span class="tag tag-co">C-O</span></td><td>Politico</td></tr>
+  </tbody>
+</table>
+
+<h3>Trait Effects</h3>
+<div class="trait-desc dt">
+  <span class="trait-name">Mark of Privilege</span> — 1D affiliation with nobility. +1 Ob to Inconspicuous or Falsehood when masquerading as lower station.
+</div>
+<div class="trait-desc dt">
+  <span class="trait-name">Educated</span> — Reduce aptitude for learning academic, research-based or historical-type skills by one.
+</div>
+<div class="trait-desc dt">
+  <span class="trait-name">Family</span> — 1D affiliation with other characters bearing the Family trait. Harming a family member earns 1D infamous reputation.
+</div>
+<div class="trait-desc dt">
+  <span class="trait-name">Vig</span> — Loans carry interest equal to the obstacle +1–3. Unpaid debts earn the debtor 1D infamous reputation; the family will collect by any means.
+</div>
+<div class="trait-desc co">
+  <span class="trait-name">Savvy</span> — Call-on for Circles when implicitly threatening the use of force — physical, social, financial or otherwise.
+</div>
+<div class="trait-desc co">
+  <span class="trait-name">Determined</span> — Reroll any one failed skill/stat/attribute test associated with one of his Beliefs. Once per phase.
+</div>
+
+<h2>Maneuver Coverage</h2>
+<p>
+  <span class="maneuver-phase phase-full">Infiltration 8/8</span>
+  <span class="maneuver-phase phase-full">Usurpation 8/8</span>
+  <span class="maneuver-phase phase-partial">Invasion 3/8</span>
+</p>
+
+<h3>Infiltration (8/8)</h3>
+<table>
+  <thead><tr><th>Maneuver</th><th>Skill</th><th>Rating</th></tr></thead>
+  <tbody>
+    <tr><td>Assess</td><td>Streetwise</td><td>6</td></tr>
+    <tr><td>Conserve</td><td>Psychology, Security</td><td>2</td></tr>
+    <tr><td>Flak</td><td>Rhetoric, Persuasion</td><td>6</td></tr>
+    <tr><td>Gambit</td><td>Tactics, Psychology</td><td>6</td></tr>
+    <tr><td>Go to Ground</td><td>Persuasion</td><td>6</td></tr>
+    <tr><td>Inundate</td><td>Tactics</td><td>6</td></tr>
+    <tr><td>Pin</td><td>Extortion</td><td>6</td></tr>
+    <tr><td>Take Action</td><td>Rhetoric</td><td>6</td></tr>
+  </tbody>
+</table>
+
+<h3>Usurpation (8/8)</h3>
+<table>
+  <thead><tr><th>Maneuver</th><th>Skill</th><th>Rating</th></tr></thead>
+  <tbody>
+    <tr><td>Assess</td><td>Security</td><td>2</td></tr>
+    <tr><td>Conserve</td><td>Finance, Tactics</td><td>6</td></tr>
+    <tr><td>Flak</td><td>Psychology</td><td>2</td></tr>
+    <tr><td>Gambit</td><td>Finance, Psychology</td><td>6</td></tr>
+    <tr><td>Go to Ground</td><td>Streetwise</td><td>6</td></tr>
+    <tr><td>Inundate</td><td>Tactics, Psychology</td><td>6</td></tr>
+    <tr><td>Pin</td><td>Finance</td><td>6</td></tr>
+    <tr><td>Take Action</td><td>Rhetoric, Finance, Tactics, Psychology</td><td>6</td></tr>
+  </tbody>
+</table>
+
+<h3>Invasion (3/8)</h3>
+<table>
+  <thead><tr><th>Maneuver</th><th>Skill</th><th>Rating</th></tr></thead>
+  <tbody>
+    <tr><td>Assess</td><td>Finance</td><td>6</td></tr>
+    <tr><td>Conserve</td><td class="miss">—</td><td class="miss">MISS</td></tr>
+    <tr><td>Flak</td><td class="miss">—</td><td class="miss">MISS</td></tr>
+    <tr><td>Go to Ground</td><td>Tactics</td><td>6</td></tr>
+    <tr><td>Gambit</td><td class="miss">—</td><td class="miss">MISS</td></tr>
+    <tr><td>Inundate</td><td class="miss">—</td><td class="miss">MISS</td></tr>
+    <tr><td>Pin</td><td>Tactics</td><td>6</td></tr>
+    <tr><td>Take Action</td><td class="miss">—</td><td class="miss">MISS</td></tr>
+  </tbody>
+</table>
+
+<h2>Circles</h2>
+<table>
+  <thead><tr><th>Spend</th><th>Cost</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td>Base Circles</td><td>6 pts</td><td>2D</td></tr>
+    <tr><td>Reputation</td><td>2 pts</td><td>2D — "the Millipede"</td></tr>
+    <tr><td>Relationship (paid)</td><td>1 pt</td><td>Vaylen Figure of Note</td></tr>
+    <tr><td>Relationship (free)</td><td>0</td><td>Nix Farrow (gang leader)</td></tr>
+  </tbody>
+</table>
+
+<h2>Beliefs</h2>
+<div class="belief" data-num="I.">There is power in a union.</div>
+<div class="belief" data-num="II.">The Vaylen Figure of Note is the best smuggler in the galaxy.</div>
+<div class="belief" data-num="III.">This planet won't run without Trent Spires.</div>
+
+<h2>Instincts</h2>
+<div class="instinct" data-num="1.">We are stronger together. (It's dangerous to go alone, take Nix.)</div>
+<div class="instinct" data-num="2.">Never trust a psychologist.</div>
+<div class="instinct" data-num="3.">Always have a way off-planet arranged.</div>
+
+<div class="artha-note">
+  <strong>Artha:</strong> 3 Fate / 2 Persona / 0 Deeds — split between Trent and Nix
+</div>
+
+<!-- ============ NIX FARROW ============ -->
+
+<hr class="divider">
+
+<h1>Nix Farrow
+  <span class="subtitle">Subordinate — Gang Leader</span>
+</h1>
+<p class="concept">Ex-military street boss. Muscle and discipline for the Millipede's operation.</p>
+
+<h2>Lifepath Chain</h2>
+<div class="lifepath-chain">
+  Born on the Streets <span class="setting">(O&amp;C)</span>
+  <span class="arrow">→</span> Soldier <span class="setting">(Anvil)</span>
+  <span class="arrow">→</span> Sergeant <span class="setting">(Anvil)</span>
+  <span class="arrow">→</span> Gunsel <span class="setting">(O&amp;C)</span>
+  <span class="age">19 years (17 base + 2 setting jumps)</span>
+</div>
+
+<h2>Stats</h2>
+<div class="stat-grid">
+  <div class="stat-box"><div class="label">Will</div><div class="value">4</div></div>
+  <div class="stat-box"><div class="label">Per</div><div class="value">4</div></div>
+  <div class="stat-box"><div class="label">Agi</div><div class="value">5</div></div>
+  <div class="stat-box"><div class="label">Spd</div><div class="value">3</div></div>
+  <div class="stat-box"><div class="label">Pow</div><div class="value">4</div></div>
+  <div class="stat-box"><div class="label">For</div><div class="value">4</div></div>
+</div>
+<p class="pool-note">Mental 8 (7 base + 1M Sergeant) · Physical 16 (14 base + 1P Soldier + 1 flex Gunsel)</p>
+
+<h2>Derived Stats</h2>
+<div class="derived-grid">
+  <div class="derived-item"><span class="label">Steel</span><span class="value">6</span></div>
+  <div class="derived-item"><span class="label">Hesitation</span><span class="value">6</span></div>
+  <div class="derived-item"><span class="label">Reflexes</span><span class="value">4</span></div>
+  <div class="derived-item"><span class="label">Health</span><span class="value">4</span></div>
+  <div class="derived-item"><span class="label">Resources</span><span class="value">3</span></div>
+</div>
+<p class="pool-note">Tolerances: Su H3 · Inj H5 · Ma H8 · Mo H10</p>
+
+<h2>Skills</h2>
+<p class="pool-note">All skills capped at 4 (subordinate)</p>
+<table>
+  <thead>
+    <tr><th>Skill</th><th>Rating</th><th>Root</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Close Combat</td><td>4</td><td>Agi</td></tr>
+    <tr><td>Assault Weapons</td><td>4</td><td>Agi</td></tr>
+    <tr><td>Tactics</td><td>4</td><td>Per</td></tr>
+    <tr><td>Infiltration</td><td>3</td><td>Spd</td></tr>
+    <tr><td>Intimidation</td><td>3</td><td>Wil</td></tr>
+    <tr><td>Streetwise</td><td>2</td><td>Per</td></tr>
+    <tr><td>Soldiering</td><td>2</td><td>Wil</td></tr>
+  </tbody>
+</table>
+
+<h2>Traits</h2>
+<table>
+  <thead>
+    <tr><th>Trait</th><th>Type</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>FUGAZI</td><td><span class="tag tag-dt">Dt</span></td><td>Soldier</td></tr>
+    <tr><td>Oddly Likeable</td><td><span class="tag tag-char">Char</span></td><td>Sergeant</td></tr>
+    <tr><td>Loyal to the Family</td><td><span class="tag tag-dt">Dt</span></td><td>Gunsel</td></tr>
+    <tr><td>Booming Voice</td><td><span class="tag tag-co">C-O</span></td><td>Sergeant</td></tr>
+    <tr><td>We Rule These Streets</td><td><span class="tag tag-dt">Dt</span></td><td>Gunsel</td></tr>
+  </tbody>
+</table>
+
+<h2>Gear</h2>
+<p>Basic weapon (1 rp) — required for Assault Weapons</p>
+
+<h2>Circles</h2>
+<table>
+  <thead><tr><th>Spend</th><th>Cost</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td>Relationship (required)</td><td>2 pts</td><td>Trent Spires (the Millipede)</td></tr>
+    <tr><td>Reputation</td><td>1 pt</td><td>1D — in the gang</td></tr>
+  </tbody>
+</table>
+
+<h2>Beliefs</h2>
+<div class="belief" data-num="I.">Trent Spires will save the Syndicate, and I must keep him safe.</div>
+
+<h2>Instincts</h2>
+<div class="instinct" data-num="1.">Always sweep the room before entering.</div>
+
+</body>
+</html>
