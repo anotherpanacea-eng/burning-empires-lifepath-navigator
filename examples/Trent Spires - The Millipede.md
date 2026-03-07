@@ -1,7 +1,7 @@
 # Burning Empires Character: The Spider
 
 ## Concept
-Connected semi-legit fixer. Noble birth, political operator, double criminal. Pulls strings, doesn't spot tails.
+Noble-born labor boss. Controls the docks, the teamsters, the pipefitters — whisper "strike" and the planet stops. Most organized crime runs through petty noble families; Trent reclaimed that inheritance and married it to a union. Pulls strings, doesn't spot tails.
 
 ## Beliefs
 1. There is power in a union.
@@ -124,10 +124,10 @@ Physical pool: 13 (13 base)
 
 | Spend | Cost | Effect |
 |-------|------|--------|
-| Base Circles | 3 pts | +1D (Circles 4) |
-| Affiliation | 3 pts | 3D — the gang |
-| Reputation | 2 pts | 2D — "the Millipede" |
 | Relationship (paid) | 1 pt | Vaylen Figure of Note |
+| Base Circles | 3 pts | +1D (Circles 4) |
+| Reputation | 3 pts | 3D — "the Millipede" |
+| Affiliation | 2 pts | 2D — the gang (longshoremen, stevedores, teamsters, pipefitters) |
 | Relationship (free) | 0 | Nix Farrow (gang leader) |
 
 ## Derived Stats
@@ -153,7 +153,7 @@ Ex-military street boss. Muscle and discipline for the Millipede's operation.
 1. Trent Spires will save the Syndicate, and I must keep him safe.
 
 ## Instincts
-1. Always sweep the room with my eyes before entering (Observation).
+1. Always sweep the room before entering (Observation).
 
 ## Lifepath Chain
 Born on the Streets (O&C) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C)
