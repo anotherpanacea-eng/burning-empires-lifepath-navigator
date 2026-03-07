@@ -10,8 +10,8 @@ Connected semi-legit fixer. Noble birth, political operator, double criminal. Pu
 
 ## Instincts
 1. We are stronger together. (It's dangerous to go alone, take Nix.)
-2. Never trust a psychologist.
-3. Always have a way off-planet arranged.
+2. Carefully document my beliefs before and after psychologist meetings with Nix and a good crypto-keyed journal.
+3. Always have an escape plan arranged.
 
 ## Lifepath Chain
 Born to Rule (Nobility) → Student (Commune) → Financier (Commune) → Politico (Commune) → Criminal (O&C) → Criminal (O&C)
@@ -36,32 +36,31 @@ Physical pool: 13 (13 base)
 
 ### Budget
 - 37 lifepath points, 6 general points (5 Born to Rule + 1 Financier)
-- Spent: 37 LP, 6 general
+- Spent: 37 LP, 6 general (Media-wise dropped to balance budget)
 - **0 points remaining**
 
 ### Skill List
 
 | Skill | Rating | Root | Source | Pts Spent |
 |-------|--------|------|--------|-----------|
-| Rhetoric | 6 | Wil | Student | 3 (open+2) |
-| Persuasion | 6 | Wil | Criminal #2 req'd | 3 (req open+2) |
-| Tactics | 6 | Per | Criminal | 4 (open+3) |
-| Streetwise | 6 | Per | Criminal | 4 (open+3) |
-| Finance | 6 | Per | Financier req'd | 4 (req open+3) |
-| Extortion | 6 | Wil | General | 4 gen (open+3) |
-| Intimidation | 6 | Wil | Criminal #1 req'd | 4 (req open+3) |
-| History | 5 | Per | Student req'd | 3 (req open+2) |
-| Advanced Mathematics | 2 | Per | Student | 1 (open) |
-| Psychology | 2 | Per | General | 1 gen |
-| Security | 2 | Per | General | 1 gen |
-| Contributions-wise | 2 | Per | Politico req'd | 1 (req open) |
-| Bribe-wise | 2 | Per | Criminal | 1 (open) |
-| Criminal-wise | 2 | Per | Criminal | 1 (open) |
-| Black Market-wise | 2 | Per | Criminal | 1 (open) |
-| Merchant League-wise | 2 | Per | Politico | 1 (open) |
-| Media-wise | 2 | Per | Politico | 1 (open) |
+| Rhetoric | 6 | Wil | Student | 4 (open@3 +3) |
+| Persuasion | 6 | Wil | Criminal #2 req'd | 4 (req open@3 +3) |
+| Tactics | 6 | Per | Criminal | 5 (open@2 +4) |
+| Streetwise | 6 | Per | Criminal | 5 (open@2 +4) |
+| Finance | 6 | Per | Financier req'd | 5 (req open@2 +4) |
+| Extortion | 6 | Wil | General | 4 gen (open@3 +3) |
+| Intimidation | 6 | Wil | Criminal #1 req'd | 4 (req open@3 +3) |
+| History | 5 | Per | Student req'd | 4 (req open@2 +3) |
+| Advanced Mathematics | 2 | Per | Student | 1 (open@2) |
+| Psychology | 2 | Per | General | 1 gen (open@2) |
+| Security | 2 | Per | General | 1 gen (open@2) |
+| Contributions-wise | 2 | Per | Politico req'd | 1 (req open@2) |
+| Bribe-wise | 2 | Per | Criminal | 1 (open@2) |
+| Criminal-wise | 2 | Per | Criminal | 1 (open@2) |
+| Black Market-wise | 2 | Per | Criminal | 1 (open@2) |
+| Merchant League-wise | 2 | Per | Politico | 1 (open@2) |
 
-**Totals:** 36 LP + 6 general = 42 pts spent. 1 LP remaining.
+**Totals:** 37 LP + 6 general = 43 pts spent. 0 remaining.
 
 ### Unopened LP Skills
 - Student: Cop-wise
@@ -125,7 +124,8 @@ Physical pool: 13 (13 base)
 
 | Spend | Cost | Effect |
 |-------|------|--------|
-| Base Circles | 6 pts | 2D |
+| Base Circles | 3 pts | +1D (Circles 4) |
+| Affiliation | 3 pts | 3D — the gang |
 | Reputation | 2 pts | 2D — "the Millipede" |
 | Relationship (paid) | 1 pt | Vaylen Figure of Note |
 | Relationship (free) | 0 | Nix Farrow (gang leader) |
@@ -133,7 +133,6 @@ Physical pool: 13 (13 base)
 ## Derived Stats
 - **Steel:** 8 (base 3 + killed +1, beaten/Will5+ +1, competitive +1, Will5+ +1, Forte6+ +1)
 - **Hesitation:** 4 (10 - Will 6)
-- **Reflexes:** 3 (Agility 2 + Speed 3 + Perception 4 = 9 ÷ 3)
 - **Health:** 6 (Will 6 + Forte 6 = 12 ÷ 2)
 - **Physical Tolerances:** Su H4 / Inj H7 / Ma H8 / Mo H10
 
@@ -154,7 +153,7 @@ Ex-military street boss. Muscle and discipline for the Millipede's operation.
 1. Trent Spires will save the Syndicate, and I must keep him safe.
 
 ## Instincts
-1. Always sweep the room before entering.
+1. Always sweep the room with my eyes before entering (Observation).
 
 ## Lifepath Chain
 Born on the Streets (O&C) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C)
@@ -234,7 +233,6 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex from Gunsel to Physical)
 ## Derived Stats
 - **Steel:** 6 (base 3 + soldier +1, wounded/soldier +1, killed +1)
 - **Hesitation:** 6 (10 - Will 4)
-- **Reflexes:** 4 (Agility 5 + Speed 3 + Perception 4 = 12 ÷ 3)
 - **Health:** 4 (Will 4 + Forte 4 = 8 ÷ 2)
 - **Physical Tolerances:** Su H3 / Inj H5 / Ma H8 / Mo H10
 
