@@ -25,18 +25,18 @@ Born to Rule (Nobility) → Student (Commune) → Financier (Commune) → Politi
 | Will | 6 |
 | Perception | 4 |
 | Agility | 2 |
-| Speed | 3 |
-| Power | 2 |
+| Speed | 2 |
+| Power | 4 |
 | Forte | 6 |
 
 Mental pool: 10 (7 base + 1M Student + 2 flex from Criminal x2, all to Mental)
-Physical pool: 13 (13 base)
+Physical pool: 14 (14 base)
 
 ## Skills
 
 ### Budget
-- 37 lifepath points, 6 general points (5 Born to Rule + 1 Financier)
-- Spent: 37 LP, 6 general (Media-wise dropped to balance budget)
+- 32 lifepath points, 6 general points (5 Born to Rule + 1 Financier)
+- Spent: 32 LP, 6 general
 - **0 points remaining**
 
 ### Skill List
@@ -50,23 +50,21 @@ Physical pool: 13 (13 base)
 | Finance | 6 | Per | Financier req'd | 5 (req open@2 +4) |
 | Extortion | 6 | Wil | General | 4 gen (open@3 +3) |
 | Intimidation | 6 | Wil | Criminal #1 req'd | 4 (req open@3 +3) |
-| History | 5 | Per | Student req'd | 4 (req open@2 +3) |
+| History | 2 | Per | Student req'd | 1 (req open@2) |
 | Advanced Mathematics | 2 | Per | Student | 1 (open@2) |
 | Psychology | 2 | Per | General | 1 gen (open@2) |
 | Security | 2 | Per | General | 1 gen (open@2) |
 | Contributions-wise | 2 | Per | Politico req'd | 1 (req open@2) |
-| Bribe-wise | 2 | Per | Criminal | 1 (open@2) |
-| Criminal-wise | 2 | Per | Criminal | 1 (open@2) |
-| Black Market-wise | 2 | Per | Criminal | 1 (open@2) |
+| Bribe-wise | 2 | Per | Financier | 1 (open@2) |
 | Merchant League-wise | 2 | Per | Politico | 1 (open@2) |
 
-**Totals:** 37 LP + 6 general = 43 pts spent. 0 remaining.
+**Totals:** 32 LP + 6 general = 38 pts spent. 0 remaining.
 
 ### Unopened LP Skills
 - Student: Cop-wise
 - Financier: Money-wise
 - Politico: Skeletons-wise
-- Criminal: Outcast-wise
+- Criminal: Outcast-wise, Criminal-wise, Black Market-wise
 
 ## Traits
 
@@ -134,7 +132,7 @@ Physical pool: 13 (13 base)
 - **Steel:** 8 (base 3 + killed +1, beaten/Will5+ +1, competitive +1, Will5+ +1, Forte6+ +1)
 - **Hesitation:** 4 (10 - Will 6)
 - **Health:** 6 (Will 6 + Forte 6 = 12 ÷ 2)
-- **Physical Tolerances:** Su H4 / Inj H7 / Ma H8 / Mo H10
+- **Physical Tolerances:** Su H4 / Inj H8 / Ma H9 / Mo H11
 
 ## Remaining Steps
 - [x] Beliefs (3)
@@ -158,7 +156,7 @@ League-born ex-military street boss. Muscle and discipline for the Millipede's o
 ## Lifepath Chain
 Born to the League (ML) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C)
 
-**20 years** (18 base + 2 setting jumps: ML→Anvil, Anvil→O&C)
+**22 years** (20 base + 2 setting jumps: ML→Anvil, Anvil→O&C)
 
 ## Stats
 
@@ -166,13 +164,13 @@ Born to the League (ML) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C
 |------|-------|
 | Will | 4 |
 | Perception | 4 |
-| Agility | 5 |
-| Speed | 3 |
+| Agility | 6 |
+| Speed | 4 |
 | Power | 4 |
 | Forte | 4 |
 
 Mental pool: 8 (7 base + 1M Sergeant)
-Physical pool: 16 (14 base + 1P Soldier + 1 flex Gunsel)
+Physical pool: 18 (16 base + 1P Soldier + 1 flex Gunsel)
 
 ## Skills
 
@@ -190,18 +188,19 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex Gunsel)
 
 | Skill | Rating | Root | Cost |
 |-------|--------|------|------|
-| Close Combat | 4 | Agi | 3 |
-| Assault Weapons | 4 | Agi | 3 |
-| Tactics | 4 | Per | 3 |
-| Infiltration | 3 | Spd | 3 |
-| Intimidation | 3 | Wil | 2 |
-| Streetwise | 2 | Per | 1 |
-| Soldiering | 2 | Wil | 1 |
-| Observation | 2 | Per | 1 gen |
+| Close Combat | 4 | Wil/Agi | 3 (open@2 +2) |
+| Assault Weapons | 4 | Agi | 2 (open@3 +1) |
+| Tactics | 4 | Per | 3 (open@2 +2) |
+| Infiltration | 3 | Spd | 2 (open@2 +1) |
+| Intimidation | 3 | Wil | 2 (open@2 +1) |
+| Streetwise | 2 | Per | 1 (open@2) |
+| Soldiering | 2 | Wil/Per | 1 (open@2) |
+| Observation | 4 | Per | 3 gen (open@2 +2) |
+| Security | 2 | Per | 1 gen (open@2) |
 
 **Totals:** 14 LP + 4 general = 18 pts spent. 0 remaining.
 
-## Traits (6 pts)
+## Traits (7 pts)
 
 | Trait | Type | Source | Cost | Note |
 |-------|------|--------|------|------|
@@ -209,16 +208,13 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex Gunsel)
 | FUGAZI | Char | Soldier | 1 | Required (1st) |
 | Oddly Likeable | Char | Sergeant | 1 | Required (1st) |
 | Loyal to the Family | Dt | Gunsel | 1 | Required (1st) |
-| Booming Voice | C-O | Sergeant | 1 | Optional |
-| We Rule These Streets | C-O | Gunsel | 1 | Optional |
+| Connected | Dt | General (BWG) | 3 | Adds Freemen to Circles |
 
 ### Trait Descriptions
 
 **Loyal to the Family** (Dt, req'd) — As the Loyal trait, but the Belief must center on their criminal family. The player may add a fourth Belief centered around loyalty to another character. If this trait is voted off, the Belief is lost; if the Belief is changed, the trait is lost.
 
-**Booming Voice** (C-O) — Call-on for Conspicuous.
-
-**We Rule These Streets** (C-O) — Call-on for Streetwise when on your home turf.
+**Connected** (Dt) — Adds Freemen (workers, laborers, dockworkers) to Nix's available Circles. Can circle up working people who know him by reputation.
 
 ## Resources & Circles
 - **Resource points:** 4 rp (Born to League 1 + Soldier 1 + Sergeant 1 + Gunsel 1)
