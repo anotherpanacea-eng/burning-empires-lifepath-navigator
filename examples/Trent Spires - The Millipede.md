@@ -147,7 +147,7 @@ Physical pool: 13 (13 base)
 # Subordinate: Nix Farrow (Gang Leader)
 
 ## Concept
-Ex-military street boss. Muscle and discipline for the Millipede's operation.
+League-born ex-military street boss. Muscle and discipline for the Millipede's operation.
 
 ## Beliefs
 1. Trent Spires will save the Syndicate, and I must keep him safe.
@@ -156,9 +156,9 @@ Ex-military street boss. Muscle and discipline for the Millipede's operation.
 1. Always sweep the room before entering (Observation).
 
 ## Lifepath Chain
-Born on the Streets (O&C) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C)
+Born to the League (ML) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O&C)
 
-**19 years** (17 base + 2 setting jumps: O&C→Anvil, Anvil→O&C)
+**20 years** (18 base + 2 setting jumps: ML→Anvil, Anvil→O&C)
 
 ## Stats
 
@@ -172,12 +172,12 @@ Born on the Streets (O&C) → Soldier (Anvil) → Sergeant (Anvil) → Gunsel (O
 | Forte | 4 |
 
 Mental pool: 8 (7 base + 1M Sergeant)
-Physical pool: 16 (14 base + 1P Soldier + 1 flex from Gunsel to Physical)
+Physical pool: 16 (14 base + 1P Soldier + 1 flex Gunsel)
 
 ## Skills
 
 ### Budget
-- 14 lifepath points, 3 general points (Born on the Streets)
+- 14 lifepath points, 4 general points (Born to the League)
 - All skills capped at 4
 - Must spend on: relationship with Trent Spires (2 circles pts)
 
@@ -197,13 +197,15 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex from Gunsel to Physical)
 | Intimidation | 3 | Wil | 2 |
 | Streetwise | 2 | Per | 1 |
 | Soldiering | 2 | Wil | 1 |
+| Observation | 2 | Per | 1 gen |
 
-**Totals:** 14 LP + 3 general = 17 pts spent. 0 remaining.
+**Totals:** 14 LP + 4 general = 18 pts spent. 0 remaining.
 
-## Traits (5 pts)
+## Traits (6 pts)
 
 | Trait | Type | Source | Cost | Note |
 |-------|------|--------|------|------|
+| Capitalist at Heart | Char | Born to the League | 1 | Required (1st) |
 | FUGAZI | Char | Soldier | 1 | Required (1st) |
 | Oddly Likeable | Char | Sergeant | 1 | Required (1st) |
 | Loyal to the Family | Dt | Gunsel | 1 | Required (1st) |
@@ -219,7 +221,7 @@ Physical pool: 16 (14 base + 1P Soldier + 1 flex from Gunsel to Physical)
 **We Rule These Streets** (C-O) — Call-on for Streetwise when on your home turf.
 
 ## Resources & Circles
-- **Resource points:** 4 rp
+- **Resource points:** 4 rp (Born to League 1 + Soldier 1 + Sergeant 1 + Gunsel 1)
 - **Gear:** Basic weapon (1 rp) — Assault Weapons requires tools
 - **Resources stat: 3**
 
