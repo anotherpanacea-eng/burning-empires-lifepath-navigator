@@ -225,7 +225,6 @@ Add lifepath stat bonuses to the appropriate pool:
 
 **Derived Attributes:**
 - Mortal Wound = (Power + Forte) / 2 (round down) + 6, shade H
-- Reflexes = (Agility + Speed + Perception) / 3
 - Health = (Will + Forte) / 2
 - Hesitation = 10 - Will
 - Steel = base 3, modified by questionnaire:
@@ -511,6 +510,109 @@ This is the primary data file used by the solver.
 
 ### `maneuver_skills.json`
 Maps the 8 Infection maneuvers to their appropriate skills for each of the 3 phases (Infiltration, Usurpation, Invasion). Used by ManeuverData to compute coverage. Includes skill aliases (e.g., "Law" maps to "Imperial Law", "Church Law", etc.).
+
+---
+
+## Character Validator
+
+The **CharacterValidator** mechanically verifies point-buy math for completed (or in-progress) character builds. It catches stat pool misallocations, skill point overspends, missing required opens, trait budget errors, and derived stat miscalculations.
+
+### Budget Mode
+
+During character burning, use budget mode to compute all available pools from a lifepath chain before the player makes spending decisions:
+
+```python
+from character_validator import CharacterValidator
+
+validator = CharacterValidator(
+    "human_lifepaths_complete.json",
+    "skill_roots.json",
+    "trait_list.json"
+)
+
+# Compute budgets from a chain (use "Name (Setting)" to disambiguate)
+budget = validator.compute_budgets([
+    "Born to Rule", "Student (Commune)", "Financier (Commune)",
+    "Politico (Commune)", "Criminal", "Criminal"
+])
+
+print(f"Age: {budget.age}")
+print(f"Mental pool: {budget.mental_pool}  Physical pool: {budget.physical_pool}")
+print(f"Skill pts: {budget.skill_points} LP + {budget.general_points} general")
+print(f"Trait pts: {budget.trait_points}")
+print(f"Resource pts: {budget.resource_points}")
+print(f"Circles pts: {budget.circles_points}")
+print(f"Required skills: {budget.required_skills}")
+print(f"Required traits: {budget.required_traits}")
+```
+
+### Validate Mode
+
+After the player has made all their spending choices, validate the complete build:
+
+```python
+build = {
+    "name": "Trent Spires",
+    "chain": ["Born to Rule", "Student (Commune)", "Financier (Commune)",
+              "Politico (Commune)", "Criminal", "Criminal"],
+    "stats": {"Will": 6, "Perception": 4, "Agility": 2, "Speed": 3,
+              "Power": 2, "Forte": 6},
+    "stat_flex": {"mental": 2},
+    "skills": [
+        {"name": "Rhetoric", "exponent": 6},
+        {"name": "Persuasion", "exponent": 6},
+        # ... all skills with exponents
+    ],
+    "traits": ["Mark of Privilege", "Educated", "Well-Heeled", "Ambitious",
+               "Family", "Vig", "Savvy", "Determined"],
+    "circles": {
+        "base_bonus_dice": 1,
+        "reputations": [3],
+        "affiliations": [2],
+        "paid_relationships": 1,
+        "complicated_relationships": 0,
+        "free_relationships": 1
+    },
+    "resources": {"gear_cost": 0, "stat": 12},
+    "derived": {"steel": 8, "hesitation": 4, "health": 6, "mortal_wound": "H10"},
+    "subordinate": False
+}
+
+report = validator.validate_build(build)
+print(report.format_report())
+```
+
+### What It Checks
+
+1. **Chain legality** — born-first, valid transitions
+2. **Age and stat pools** — age bracket lookup, mental/physical allocation, flex point placement
+3. **Skill points** — opening costs (root ÷ 2), advance costs, total budget
+4. **Required skill opens** — 1st skill per LP (2nd on repeats), with cascading
+5. **Trait points** — required traits (1 pt), optional LP traits (1 pt), general traits (listed cost)
+6. **Required traits** — 1st trait per LP (2nd on repeats), with cascading
+7. **Circles spending** — base bonus (3 pts/die), reputations, affiliations, relationships
+8. **Resource spending** — gear + stat = total rps
+9. **Derived stats** — Hesitation, Health, Mortal Wound (Steel flagged if out of range)
+10. **Prohibited stats** — flags Reflexes (Burning Wheel only, not in BE)
+
+### CLI Usage
+
+```bash
+# Budget mode: see available pools for a chain
+python character_validator.py --budgets "Born to Rule" "Student (Commune)" \
+    "Financier (Commune)" "Politico (Commune)" "Criminal" "Criminal"
+
+# Validate mode: check a complete build from JSON
+python character_validator.py build.json
+```
+
+### Integration with Character Burning
+
+Use the validator at two points during character burning:
+
+1. **After Step 3 (Choose Lifepaths)** — run budget mode to show the player exactly how many stat, skill, trait, resource, and circles points they have to spend. This prevents overcommitting during later steps.
+
+2. **After Step 12 (Finalize)** — run validate mode on the complete build to catch any arithmetic errors before play begins.
 
 ---
 

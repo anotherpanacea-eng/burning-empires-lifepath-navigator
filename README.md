@@ -74,7 +74,9 @@ Found 12 chain(s):
 | `human_lifepaths_complete.json` | 222 lifepaths with pre-parsed structured requirements |
 | `maneuver_skills.json` | Infection maneuver-to-skill mapping (3 phases x 8 maneuvers) |
 | `character_burning_prompt.md` | LLM system prompt for AI-assisted character burning |
+| `character_validator.py` | Point-buy verification: stats, skills, traits, circles, resources, derived stats |
 | `test_lifepath_solver.py` | 132-test suite (data integrity, requirements, search, regressions, maneuver coverage) |
+| `test_character_validator.py` | 45-test suite (budget computation, skill costs, required opens, full build validation) |
 | `generate_canonical_chains.py` | Generates canonical chain templates for capstone lifepaths |
 | `canonical_test_fixtures.json` | Pre-computed test fixtures for regression testing |
 
@@ -157,6 +159,52 @@ coverage = md.compute_coverage({"Tactics", "Strategy", "Propaganda", "Logistics"
 print(md.format_coverage(coverage))  # e.g. "15/24 (5/8 Inf, 5/8 Usu, 5/8 Inv)"
 ```
 
+## Character Validator
+
+After finding a lifepath chain with the solver, use the **CharacterValidator** to verify that all point-buy math adds up. It catches the cascading arithmetic errors that plague hand-built characters.
+
+### Budget Mode
+
+Compute available pools before the player makes spending decisions:
+
+```bash
+python character_validator.py --budgets "Born to Rule" "Student (Commune)" \
+    "Financier (Commune)" "Politico (Commune)" "Criminal" "Criminal"
+```
+
+Output shows age, stat pools (mental/physical), skill points (LP + general), trait points, resource points, circles points, and all required skill/trait opens.
+
+### Validate Mode
+
+Check a complete build against its chain's budgets:
+
+```bash
+python character_validator.py build.json
+```
+
+The build JSON specifies stats, skills (with exponents), traits, circles spending, resources, and derived stats. The validator checks every pool, flags overspends, verifies required opens, and confirms derived stat calculations.
+
+### As a Library
+
+```python
+from character_validator import CharacterValidator
+
+validator = CharacterValidator(
+    "human_lifepaths_complete.json",
+    "skill_roots.json",
+    "trait_list.json"
+)
+
+# Budget mode
+budget = validator.compute_budgets(["Born to Rule", "Student (Commune)", ...])
+
+# Validate mode
+report = validator.validate_build(build_dict)
+print(report.format_report())
+```
+
+See `character_burning_prompt.md` for the full build schema and integration guidance.
+
 ## LLM-Assisted Character Burning
 
 `character_burning_prompt.md` is a system prompt for using an LLM (e.g., Claude) as an interactive character burning assistant. It walks players through the full Burning Empires character creation process and uses the solver API to find and validate lifepath chains. Load the prompt as a system message, attach the solver and data files, and the LLM handles the rest.
@@ -164,10 +212,10 @@ print(md.format_coverage(coverage))  # e.g. "15/24 (5/8 Inf, 5/8 Usu, 5/8 Inv)"
 ## Running Tests
 
 ```bash
-pytest test_lifepath_solver.py -v
+pytest test_lifepath_solver.py test_character_validator.py -v
 ```
 
-132 tests covering data integrity, requirement satisfaction, lifepath ordering, k-of-n requirements, trait paths, complex conjunctions, position constraints, edge cases, hard negatives, search correctness, real-world integration scenarios, canonical chain regressions, and maneuver coverage.
+177 tests total: 132 covering data integrity, requirement satisfaction, lifepath ordering, k-of-n requirements, trait paths, complex conjunctions, position constraints, edge cases, hard negatives, search correctness, real-world integration scenarios, canonical chain regressions, and maneuver coverage; plus 45 covering budget computation, stat pool brackets, skill cost calculation, required opens, trait costs, circles/resource spending, derived stats, full build validation, and edge cases.
 
 ## Data
 
