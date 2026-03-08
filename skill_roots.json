@@ -413,6 +413,12 @@
     "practice_cycle": "6 ms",
     "hours_per_day": "3r/5d/10c"
   },
+  "Observation": {
+    "root": "Per",
+    "technology": "No",
+    "practice_cycle": "6 ms",
+    "hours_per_day": "2r/4d/8c"
+  },
   "Oratory": {
     "root": "Wil",
     "technology": "No",
