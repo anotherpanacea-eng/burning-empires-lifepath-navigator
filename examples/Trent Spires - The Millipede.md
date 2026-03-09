@@ -4,9 +4,9 @@
 Noble-born labor boss. Controls the docks, the teamsters, the pipefitters — whisper "strike" and the planet stops. Most organized crime runs through petty noble families; Trent reclaimed that inheritance and married it to a union. Pulls strings, doesn't spot tails.
 
 ## Beliefs
-1. There is power in a union.
-2. The Vaylen Figure of Note is the best smuggler in the galaxy.
-3. This planet won't run without Trent Spires.
+1. The commune is the true representative of the people: the league and the nobility are both exploiters.
+2. Ancillus is the greatest smuggler in the galaxy. But he's hiding something else.
+3. The worms are just a distraction from our real divisions: anyone who's selling something else is a propagandist for the league or the nobility.
 
 ## Instincts
 1. We are stronger together. (It's dangerous to go alone, take Nix.)
@@ -208,13 +208,13 @@ Physical pool: 18 (16 base + 1P Soldier + 1 flex Gunsel)
 | FUGAZI | Char | Soldier | 1 | Required (1st) |
 | Oddly Likeable | Char | Sergeant | 1 | Required (1st) |
 | Loyal to the Family | Dt | Gunsel | 1 | Required (1st) |
-| Connected | Dt | General (BWG) | 3 | Adds Freemen to Circles |
+| Cool-Headed | Dt | General | 3 | Reduce hesitation by 2 |
 
 ### Trait Descriptions
 
 **Loyal to the Family** (Dt, req'd) — As the Loyal trait, but the Belief must center on their criminal family. The player may add a fourth Belief centered around loyalty to another character. If this trait is voted off, the Belief is lost; if the Belief is changed, the trait is lost.
 
-**Connected** (Dt) — Adds Freemen (workers, laborers, dockworkers) to Nix's available Circles. Can circle up working people who know him by reputation.
+**Cool-Headed** (Dt) — Reduce hesitation by two.
 
 ## Resources & Circles
 - **Resource points:** 4 rp (Born to League 1 + Soldier 1 + Sergeant 1 + Gunsel 1)
@@ -230,7 +230,7 @@ Physical pool: 18 (16 base + 1P Soldier + 1 flex Gunsel)
 
 ## Derived Stats
 - **Steel:** 6 (base 3 + soldier +1, wounded/soldier +1, killed +1)
-- **Hesitation:** 6 (10 - Will 4)
+- **Hesitation:** 4 (10 - Will 4 = 6, Cool-Headed -2)
 - **Health:** 4 (Will 4 + Forte 4 = 8 ÷ 2)
 - **Physical Tolerances:** Su H3 / Inj H5 / Ma H8 / Mo H10
 
